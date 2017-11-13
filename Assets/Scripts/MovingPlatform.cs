@@ -11,7 +11,8 @@ public class MovingPlatform : MonoBehaviour {
     private int direction = 1;
 	
 	
-	void Update () {
+	void Update ()
+    {
         // Bewegung der Plattform
         // transform.right = Vector3(1, 0, 0)
         transform.Translate(transform.right * speed * direction * Time.deltaTime);
