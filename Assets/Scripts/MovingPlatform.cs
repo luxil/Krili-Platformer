@@ -19,10 +19,10 @@ public class MovingPlatform : MonoBehaviour {
 	}
 
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider col)
     {
         // Start und Zielpunkt der Plattformen sind durch EmptyGameObjects mit dem Tag "PlatformTarget" festgelegt
-        if (other.tag == "PlatformTarget")
+        if (col.tag == "PlatformTarget")
         {
             // Richtungswechsel
             if (direction == 1)
@@ -30,6 +30,27 @@ public class MovingPlatform : MonoBehaviour {
             else
                 direction = 1;
         }
+
+        /*
+        // wenn der Spieler die Plattform berührt, wird er für diese Dauer zum Child der Plattform, um die Bewegung zu übernehmen (d.h. auf der Plattform zu bleiben)
+        if(col.tag == "Player")
+        {
+            col.transform.parent = transform;
+            //col.collider.transform.SetParent(transform);
+        }
+        */
     }
+
+    /*
+    // beim Verlassen der Plattform wird der Player wieder als Child entfernt
+    void OnTriggerExit(Collider playercol )
+    {
+        if(playercol.tag == "Player")
+        {
+            playercol.transform.parent = null;
+            //playercol.collider.transform.SetParent(null);
+        }
+    }
+    */
 
 }
