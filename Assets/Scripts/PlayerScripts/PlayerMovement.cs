@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     //running speed of the player
     public float fRunningSpeed;
     public Transform TGroundCheck;
-    public float fJumpForce = 5f;
+    public float fJumpForce = 10f;
 
     private Rigidbody rbPlayer;
 

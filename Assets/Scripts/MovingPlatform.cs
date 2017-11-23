@@ -9,13 +9,16 @@ public class MovingPlatform : MonoBehaviour {
 
     // Richtung der Plattform. 1 = vorwärts, -1 = rückwarts
     private int direction = 1;
-	
+
+    //prüft, ob der Player auf der Plattform steht
+    private bool bPlayerOnPlatform = false;
 	
 	void Update ()
     {
         // Bewegung der Plattform
         // transform.right = Vector3(1, 0, 0)
-        transform.Translate(transform.right * speed * direction * Time.deltaTime);
+        if(bPlayerOnPlatform)
+            transform.Translate(transform.right * speed * direction * Time.deltaTime);
 	}
 
 
@@ -30,27 +33,28 @@ public class MovingPlatform : MonoBehaviour {
             else
                 direction = 1;
         }
-
-        /*
-        // wenn der Spieler die Plattform berührt, wird er für diese Dauer zum Child der Plattform, um die Bewegung zu übernehmen (d.h. auf der Plattform zu bleiben)
-        if(col.tag == "Player")
-        {
-            col.transform.parent = transform;
-            //col.collider.transform.SetParent(transform);
-        }
-        */
     }
 
-    /*
+    
     // beim Verlassen der Plattform wird der Player wieder als Child entfernt
-    void OnTriggerExit(Collider playercol )
+    private void OnCollisionExit(Collision collision)
     {
-        if(playercol.tag == "Player")
+        if(collision.gameObject.tag == "Player")
         {
-            playercol.transform.parent = null;
-            //playercol.collider.transform.SetParent(null);
+            bPlayerOnPlatform = false;
+            collision.transform.parent = null;
         }
     }
-    */
+    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // wenn der Spieler die Plattform berührt, wird er für diese Dauer zum Child der Plattform, um die Bewegung zu übernehmen (d.h. auf der Plattform zu bleiben)
+        if (collision.gameObject.tag == "Player")
+        {
+            bPlayerOnPlatform = true;
+            collision.transform.parent = transform;
+        }
+    }
 
 }

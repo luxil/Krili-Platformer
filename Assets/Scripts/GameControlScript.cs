@@ -13,6 +13,7 @@ public class GameControlScript : MonoBehaviour {
     void Start()
     {
         health = 2;
+        setActiveHearts(health);
     }
 
     // Update is called once per frame
