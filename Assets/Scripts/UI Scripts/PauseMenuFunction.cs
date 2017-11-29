@@ -9,12 +9,14 @@ public class PauseMenuFunction : MonoBehaviour {
 
     void Start ()
     {
+        // disable Canvas at the start of the scene
         pauseCanvas.gameObject.SetActive(false);
 	}
 	
 
 	void Update ()
     {
+        // for PC: pause game when esc is clicked
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
