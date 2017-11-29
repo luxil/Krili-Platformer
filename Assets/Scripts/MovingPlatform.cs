@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour {
 
-    // Schnelligkeit der Plattform, public damit im editor änderbar
+	// platform speed (public so it's easily changeable in the editor)
     public float speed = 1;
 
-    // Richtung der Plattform. 1 = vorwärts, -1 = rückwarts
+	// platform direction (1 = forward, -1 = backwards)
     private int direction = 1;
 
-    //prüft, ob der Player auf der Plattform steht
+	// check to see if player is currently on the platform
     private bool bPlayerOnPlatform = false;
 	
 	void Update ()
     {
-        // Bewegung der Plattform
+        // platform movement
         // transform.right = Vector3(1, 0, 0)
         if(bPlayerOnPlatform)
             transform.Translate(transform.right * speed * direction * Time.deltaTime);
@@ -24,10 +24,10 @@ public class MovingPlatform : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        // Start und Zielpunkt der Plattformen sind durch EmptyGameObjects mit dem Tag "PlatformTarget" festgelegt
+		// EmptyGameObjects tagged "PlatformTarget" mark the two points each platform will move to 
         if (col.tag == "PlatformTarget")
         {
-            // Richtungswechsel
+            // change of direction upon hitting the second point
             if (direction == 1)
                 direction = -1;
             else
@@ -35,8 +35,18 @@ public class MovingPlatform : MonoBehaviour {
         }
     }
 
-    
-    // beim Verlassen der Plattform wird der Player wieder als Child entfernt
+	
+    private void OnCollisionEnter(Collision collision)
+    {
+		// player becomes child object of the platform upon touching it and mirrors its movement (to stay on top of the platform)
+        if (collision.gameObject.tag == "Player")
+        {
+            bPlayerOnPlatform = true;
+            collision.transform.parent = transform;
+        }
+    }
+	
+	// player is no longer the child object after leaving the platform
     private void OnCollisionExit(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -45,16 +55,5 @@ public class MovingPlatform : MonoBehaviour {
             collision.transform.parent = null;
         }
     }
-    
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        // wenn der Spieler die Plattform berührt, wird er für diese Dauer zum Child der Plattform, um die Bewegung zu übernehmen (d.h. auf der Plattform zu bleiben)
-        if (collision.gameObject.tag == "Player")
-        {
-            bPlayerOnPlatform = true;
-            collision.transform.parent = transform;
-        }
-    }
-
+   
 }
