@@ -7,11 +7,16 @@ public class PauseMenuFunction : MonoBehaviour {
 
     public Canvas pauseCanvas;
 
+    public GameObject playerObject;
+
+    private bool bStateChange;
+
     void Start ()
     {
         // disable Canvas at the start of the scene
         pauseCanvas.gameObject.SetActive(false);
-	}
+        bStateChange = false;
+    }
 	
 
 	void Update ()
@@ -27,8 +32,15 @@ public class PauseMenuFunction : MonoBehaviour {
 
     public void Pause()
     {
-            Time.timeScale = 0.0f; //paused
-            pauseCanvas.gameObject.SetActive(true);
+        Time.timeScale = 0.0f; //paused
+        pauseCanvas.gameObject.SetActive(true);
+
+        // stop Player if he's currently moving
+        if (playerObject.GetComponent<PlayerMovement>().bMovePlayer == true)
+        {
+            playerObject.GetComponent<PlayerMovement>().bMovePlayer = false;
+            bStateChange = true;
+        }
     }
 
 
@@ -46,5 +58,13 @@ public class PauseMenuFunction : MonoBehaviour {
     {
         Time.timeScale = 1.0f; //unpaused
         pauseCanvas.gameObject.SetActive(false);
+
+        // if player was stopped reactivate movement
+        if(bStateChange == true)
+        {
+            playerObject.GetComponent<PlayerMovement>().bMovePlayer = true;
+            bStateChange = false;
+        }
+            
     }
 }

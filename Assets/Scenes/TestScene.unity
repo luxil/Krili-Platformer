@@ -1000,6 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 16350499}
+  playerObject: {fileID: 114789277}
 --- !u!114 &850655518
 MonoBehaviour:
   m_ObjectHideFlags: 0
