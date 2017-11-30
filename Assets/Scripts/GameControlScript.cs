@@ -6,40 +6,40 @@ public class GameControlScript : MonoBehaviour {
 
     //tutorial from: https://www.youtube.com/watch?v=LsUiJItfzxU
 
-    public GameObject[] hearts;
-    public int health;
+    public GameObject[] goHearts;
+    public int iHealth;
 
     // Use this for initialization
     void Start()
     {
-        health = 2;
-        setActiveHearts(health);
+        iHealth = 2;
+        setActiveHearts(iHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
-        setActiveHearts(health);
+        setActiveHearts(iHealth);
     }
 
-    public void addHearts(int numberOfHearts)
+    public void addHearts(int iNumberOfHearts)
     {
-        health += numberOfHearts;
+        iHealth += iNumberOfHearts;
     }
 
-    public void reduceHearts(int numberOfHearts)
+    public void reduceHearts(int iNumberOfHearts)
     {
-        health -= numberOfHearts;
+        iHealth -= iNumberOfHearts;
     }
 
-    void setActiveHearts(int numberActiveHearts)
+    void setActiveHearts(int iNumberActiveHearts)
     {
-        for (int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < goHearts.Length; i++)
         {
-            if(i < numberActiveHearts)
-                hearts[i].gameObject.SetActive(true);
+            if(i < iNumberActiveHearts)
+                goHearts[i].gameObject.SetActive(true);
             else
-                hearts[i].gameObject.SetActive(false);
+                goHearts[i].gameObject.SetActive(false);
         }
     }
 }

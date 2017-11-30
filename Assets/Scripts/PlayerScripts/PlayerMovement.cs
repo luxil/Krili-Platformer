@@ -8,7 +8,11 @@ public class PlayerMovement : MonoBehaviour {
     //running speed of the player
     public float fRunningSpeed;
     public Transform TGroundCheck;
-    public float fJumpForce = 10f;
+    public float fJumpForce = 500f;
+
+    public bool bFalling = false; // tells when the player is falling 
+    private float fLastY; // last grounded height 
+    private CharacterController ccCharacter;
 
     private Rigidbody rbPlayer;
 
@@ -16,6 +20,9 @@ public class PlayerMovement : MonoBehaviour {
     void Start () {
         bMovePlayer = true;
         fRunningSpeed = 0.03f;
+
+        ccCharacter = GetComponent<CharacterController>();
+        fLastY = transform.position.y;
 
         rbPlayer = GetComponent<Rigidbody>();
     }
@@ -53,6 +60,23 @@ public class PlayerMovement : MonoBehaviour {
             bJump = true;
         }
 
+        if (!bGrounded)
+        {
+            bFalling = true;
+        }
+        else
+        {
+            if (bFalling)
+            { // but was falling last update... 
+                var hFall = fLastY - transform.position.y;
+                // calculate the fall height... 
+                if (hFall > 8)
+                { // then check the damage/death // player is dead 
+                    Debug.Log("PLAYER DEAD");
+                }
+            }
+            fLastY = transform.position.y; // update lastY when character grounded 
+        }
         
     }
 
@@ -67,11 +91,24 @@ public class PlayerMovement : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            Debug.DrawRay(contact.point, contact.normal, Color.white);
-        }
+        //foreach (ContactPoint contact in collision.contacts)
+        //{
+        //    Debug.DrawRay(contact.point, contact.normal, Color.white);
+        //}
 
+        
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            bGrounded = false;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             bGrounded = true;
