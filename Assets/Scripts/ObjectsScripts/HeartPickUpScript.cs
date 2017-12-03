@@ -2,31 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BadCubeScript : MonoBehaviour {
-
-    //https://www.mpgh.net/forum/showthread.php?t=427244
+public class HeartPickUpScript : MonoBehaviour {
     //get GameObject InGameControl in Canvas
     public GameObject goInGameControl;
     HealthControlScript htsScript;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         htsScript = goInGameControl.GetComponent<HealthControlScript>();
     }
 
+    //if player collides with heart then pick it up
     private void OnCollisionEnter(Collision collision)
     {
-        //if player collides with coin then reduce his health
         if (collision.gameObject.tag == "Player")
         {
-            htsScript.reduceHearts(1);
+            htsScript.addHearts(1);
+            Destroy(gameObject);
         }
-
-        //foreach (ContactPoint contact in collision.contacts)
-        //{
-        //    Debug.DrawRay(contact.point, contact.normal, Color.white);
-        //    gameControlScript.reduceHearts(1);
-        //}
     }
-
 }

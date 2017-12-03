@@ -38,7 +38,7 @@ public class MovingPlatform : MonoBehaviour {
 	
     private void OnCollisionEnter(Collision collision)
     {
-		// player becomes child object of the platform upon touching it and mirrors its movement (to stay on top of the platform)
+        // player becomes child object of the platform upon touching it and mirrors its movement (to stay on top of the platform)
         if (collision.gameObject.tag == "Player")
         {
             bPlayerOnPlatform = true;
@@ -51,7 +51,6 @@ public class MovingPlatform : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            bPlayerOnPlatform = false;
             collision.transform.parent = null;
         }
     }
