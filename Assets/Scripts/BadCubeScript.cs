@@ -7,26 +7,17 @@ public class BadCubeScript : MonoBehaviour {
     //https://www.mpgh.net/forum/showthread.php?t=427244
     //get GameObject InGameControl in Canvas
     public GameObject goInGameControl;
-    HealthControlScript htsScript;
+    public GameObject goPlayer;
 
-    // Use this for initialization
-    void Start () {
-        htsScript = goInGameControl.GetComponent<HealthControlScript>();
-    }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        //if player collides with coin then reduce his health
-        if (collision.gameObject.tag == "Player")
+        //player got hit 
+        if(other.gameObject.tag == "Player")
         {
-            htsScript.reduceHearts(1);
+            goInGameControl.GetComponent<HealthControlScript>().reduceHearts(1);
+            goPlayer.GetComponent<PlayerHitScript>().playerGotHurt();
         }
-
-        //foreach (ContactPoint contact in collision.contacts)
-        //{
-        //    Debug.DrawRay(contact.point, contact.normal, Color.white);
-        //    gameControlScript.reduceHearts(1);
-        //}
     }
 
 }
