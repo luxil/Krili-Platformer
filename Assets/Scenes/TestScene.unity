@@ -625,6 +625,7 @@ GameObject:
   - component: {fileID: 301618829}
   - component: {fileID: 301618828}
   - component: {fileID: 301618827}
+  - component: {fileID: 301618832}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -643,8 +644,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199ca61b854dd5447a5ecfebb8d2aafc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fSpeed: 0.4
-  fAmplitude: 50
+  fSpeed: 1
+  fAmplitude: 65
+  goInGameControl: {fileID: 27877902}
+  goPlayer: {fileID: 1631659750}
 --- !u!23 &301618828
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -701,14 +704,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 301618826}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.45, y: 6.47, z: 0.006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.96, y: 6.47, z: 0.006}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.5}
   m_Children:
   - {fileID: 919144528}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1104104282}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &301618832
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 301618826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 20.23732, z: 2.0027928}
+  m_Center: {x: 0, y: -10.5854025, z: 0.009831369}
 --- !u!1 &365886397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,7 +1404,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.17510128
+  m_Radius: 0.1556561
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -1851,6 +1866,7 @@ Transform:
   - {fileID: 2143927489}
   - {fileID: 934705350}
   - {fileID: 973808120}
+  - {fileID: 301618831}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
