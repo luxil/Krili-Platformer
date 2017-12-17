@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour {
     //running speed of the player
     public float fRunningSpeed;
     public Transform TGroundCheck;
-    public float fJumpForce = 500f;
+    public float fJumpForce = 1000f;
+    const float cfRunningSpeed = 0.1f;
 
     // tells when the player is falling 
     public bool bFalling = false;
@@ -21,7 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         bMovePlayer = true;
-        fRunningSpeed = 0.2f;
+        fRunningSpeed = cfRunningSpeed;
 
         //ccCharacter = GetComponent<CharacterController>();
         fLastY = transform.position.y;
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
         //slow player down
         if (Input.GetKeyUp("right"))
         {
-            fRunningSpeed = 0.2f;
+            fRunningSpeed = cfRunningSpeed;
         }
 
         //player should duck
