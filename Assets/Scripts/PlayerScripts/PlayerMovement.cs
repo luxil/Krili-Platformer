@@ -120,4 +120,30 @@ public class PlayerMovement : MonoBehaviour {
             bGrounded = true;
         }
     }
+
+    public void jump()
+    {
+        if (bGrounded)
+        {
+            bJump = true;
+        }
+    }
+
+    public void crouch()
+    {
+        Debug.Log("crouch works");
+        transform.localScale -= new Vector3(0, 0.6f, 0);
+        transform.position -= new Vector3(0, 0.6f, 0);
+    }
+
+    public void cancelCrouch()
+    {
+        transform.localScale += new Vector3(0, 0.6f, 0);
+        transform.position += new Vector3(0, 0.6f, 0);
+    }
+
+    public void toggleMovement()
+    {
+        bMovePlayer = !bMovePlayer;
+    }
 }
