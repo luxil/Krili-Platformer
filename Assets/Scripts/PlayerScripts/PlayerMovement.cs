@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         bMovePlayer = true;
-        fRunningSpeed = 0.05f;
+        fRunningSpeed = 0.2f;
 
         //ccCharacter = GetComponent<CharacterController>();
         fLastY = transform.position.y;
@@ -49,12 +49,12 @@ public class PlayerMovement : MonoBehaviour {
         //player can run faster
         if (Input.GetKeyDown("right"))
         {
-            fRunningSpeed = 0.09f;
+            fRunningSpeed = 0.9f;
         }
         //slow player down
         if (Input.GetKeyUp("right"))
         {
-            fRunningSpeed = 0.05f;
+            fRunningSpeed = 0.2f;
         }
 
         //player should duck
