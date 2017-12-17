@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     //move the player or not
-    public bool bMovePlayer, bGrounded, bJump;
+    public bool bMovePlayer, bGrounded;
     //running speed of the player
     public float fRunningSpeed;
     public Transform TGroundCheck;
@@ -40,47 +40,46 @@ public class PlayerMovement : MonoBehaviour {
         {
             transform.Translate(fRunningSpeed, 0, 0);
         }
-
-        //player should stop or run
+        
+        ///pc controls
         if (Input.GetKeyDown("left"))
         {
-            bMovePlayer = !bMovePlayer;
+            ToggleMovement();
         }
-
-        //player can run faster
-        if (Input.GetKeyDown("right"))
-        {
-            fRunningSpeed = 0.9f;
-        }
-        //slow player down
-        if (Input.GetKeyUp("right"))
-        {
-            fRunningSpeed = cfRunningSpeed;
-        }
-
-        //player should duck
+        
         if (Input.GetKeyDown("down"))
         {
-            transform.localScale -= new Vector3(0, 0.6f, 0);
-            transform.position -= new Vector3(0, 0.6f, 0);
+            Crouch();
         }
 
-        //player should stop duck
         if (Input.GetKeyUp("down"))
         {
-            transform.localScale += new Vector3(0, 0.6f, 0);
-            transform.position += new Vector3(0, 0.6f, 0);
+            CancelCrouch();
         }
 
         if (Input.GetKeyDown("up") && bGrounded)
         {
-            bJump = true;
+            Jump();
         }
+
+        ///for testing purposes
+        ////player can run faster
+        //if (Input.GetKeyDown("right"))
+        //{
+        //    fRunningSpeed = 0.9f;
+        //}
+
+        ////slow player down
+        //if (Input.GetKeyUp("right"))
+        //{
+        //    fRunningSpeed = cfRunningSpeed;
+        //}
 
         if (!bGrounded)
         {
             bFalling = true;
         }
+
         else
         {
             if (bFalling)
@@ -95,15 +94,6 @@ public class PlayerMovement : MonoBehaviour {
             fLastY = transform.position.y; // update lastY when character grounded 
         }
         
-    }
-
-    void FixedUpdate()
-    {
-        if (bJump)
-        {
-            rbPlayer.AddForce((Vector3.up + Vector3.right*0.2f) * fJumpForce);
-            bJump = false;
-        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -122,28 +112,34 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    public void jump()
+    public void Jump()
     {
         if (bGrounded)
         {
-            bJump = true;
+            if (bMovePlayer)
+                rbPlayer.AddForce((Vector3.up * 1.15f + Vector3.right * 0.1f) * fJumpForce);
+            else
+                rbPlayer.AddForce((Vector3.up * 1.2f + Vector3.right * 0.5f) * fJumpForce);
         }
     }
 
-    public void crouch()
+    //player should crouch
+    public void Crouch()
     {
         Debug.Log("crouch works");
         transform.localScale -= new Vector3(0, 0.6f, 0);
         transform.position -= new Vector3(0, 0.6f, 0);
     }
 
-    public void cancelCrouch()
+    //player should stop crouching
+    public void CancelCrouch()
     {
         transform.localScale += new Vector3(0, 0.6f, 0);
         transform.position += new Vector3(0, 0.6f, 0);
     }
 
-    public void toggleMovement()
+    //player should stop or run
+    public void ToggleMovement()
     {
         bMovePlayer = !bMovePlayer;
     }

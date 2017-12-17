@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pendulum : MonoBehaviour {
+public class PendulumScript : MonoBehaviour {
 
     // variables needed for the pendulum
     public float fSpeed = 1.6f;     // speed at which the pendulum swings
@@ -12,7 +12,8 @@ public class Pendulum : MonoBehaviour {
     public GameObject goInGameControl;
     public GameObject goPlayer;
 
-    void Update () {
+    void Update()
+    {
 
         ///  <summary>
         ///     Quaternion Euler(float x, float y, float z);

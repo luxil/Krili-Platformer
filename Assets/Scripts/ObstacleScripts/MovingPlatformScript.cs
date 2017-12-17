@@ -2,29 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour {
+public class MovingPlatformScript : MonoBehaviour {
 
-	// platform speed (public so it's easily changeable in the editor)
-    public float speed = 1;
+    // platform speed (public so it's easily changeable in the editor)
+    public float speed = 3;
 
-	// platform direction (1 = forward, -1 = backwards)
+    // platform direction (1 = forward, -1 = backwards)
     private int direction = 1;
 
-	// check to see if player is currently on the platform
-    private bool bPlayerOnPlatform = false;
-	
-	void Update ()
+    void Update()
     {
-        // platform movement
-        // transform.right = Vector3(1, 0, 0)
-        if(bPlayerOnPlatform)
-            transform.Translate(transform.right * speed * direction * Time.deltaTime);
-	}
+        transform.Translate(transform.right * speed * direction * Time.deltaTime);
+    }
 
 
     void OnTriggerEnter(Collider col)
     {
-		// EmptyGameObjects tagged "PlatformTarget" mark the two points each platform will move to 
+        // EmptyGameObjects tagged "PlatformTarget" mark the two points each platform will move to 
         if (col.tag == "PlatformTarget")
         {
             // change of direction upon hitting the second point
@@ -35,24 +29,22 @@ public class MovingPlatform : MonoBehaviour {
         }
     }
 
-	
+
     private void OnCollisionEnter(Collision collision)
     {
         // player becomes child object of the platform upon touching it and mirrors its movement (to stay on top of the platform)
         if (collision.gameObject.tag == "Player")
         {
-            bPlayerOnPlatform = true;
             collision.transform.parent = transform;
         }
     }
-	
-	// player is no longer the child object after leaving the platform
+
+    // player is no longer the child object after leaving the platform
     private void OnCollisionExit(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             collision.transform.parent = null;
         }
     }
-   
 }

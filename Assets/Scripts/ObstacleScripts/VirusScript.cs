@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class VirusScript : MonoBehaviour {
 
     //variables needed for the enemy movement
     public float fSpeed = 5.0f;
@@ -15,12 +15,13 @@ public class Enemy : MonoBehaviour {
     public GameObject goPlayer;
 
 
-    void Start () {
-		
+    void Start()
+    {
         v3StartPos = transform.position;    // get starting postion
     }
-	
-	void Update () {
+
+    void Update()
+    {
 
         // set direction
         if (transform.position.y > v3StartPos.y + fLimit)   // if position is greater than starting position + limit, change direction

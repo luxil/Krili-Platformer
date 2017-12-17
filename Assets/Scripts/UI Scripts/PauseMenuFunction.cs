@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class PauseMenuFunction : MonoBehaviour {
 
-    public Canvas pauseCanvas;
+    public Canvas caPauseMenu;
 
-    public GameObject playerObject;
+    public GameObject goPlayerObject;
 
     private bool bStateChange;
 
     void Start ()
     {
         // disable Canvas at the start of the scene
-        pauseCanvas.gameObject.SetActive(false);
+        caPauseMenu.gameObject.SetActive(false);
         bStateChange = false;
     }
 	
@@ -33,12 +33,14 @@ public class PauseMenuFunction : MonoBehaviour {
     public void Pause()
     {
         Time.timeScale = 0.0f; //paused
-        pauseCanvas.gameObject.SetActive(true);
+        caPauseMenu.gameObject.SetActive(true);
 
         // stop Player if he's currently moving
-        if (playerObject.GetComponent<PlayerMovement>().bMovePlayer == true)
+        Debug.Log(goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer);
+        if (goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer == true)
         {
-            playerObject.GetComponent<PlayerMovement>().bMovePlayer = false;
+            goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer = false;
+            Debug.Log(goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer);
             bStateChange = true;
         }
     }
@@ -57,12 +59,12 @@ public class PauseMenuFunction : MonoBehaviour {
     public void Continue()
     {
         Time.timeScale = 1.0f; //unpaused
-        pauseCanvas.gameObject.SetActive(false);
+        caPauseMenu.gameObject.SetActive(false);
 
         // if player was stopped reactivate movement
         if(bStateChange == true)
         {
-            playerObject.GetComponent<PlayerMovement>().bMovePlayer = true;
+            goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer = true;
             bStateChange = false;
         }
             
