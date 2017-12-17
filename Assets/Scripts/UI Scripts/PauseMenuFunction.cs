@@ -36,11 +36,9 @@ public class PauseMenuFunction : MonoBehaviour {
         caPauseMenu.gameObject.SetActive(true);
 
         // stop Player if he's currently moving
-        Debug.Log(goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer);
         if (goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer == true)
         {
             goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer = false;
-            Debug.Log(goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer);
             bStateChange = true;
         }
     }
