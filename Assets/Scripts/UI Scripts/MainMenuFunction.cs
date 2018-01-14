@@ -7,11 +7,13 @@ public class MainMenuFunction : MonoBehaviour {
 
     public GameObject goMainMenuContainer;
     public GameObject goLevelPanel;
+    public GameObject goInfoPanel;
 
     void Start()
     {
-        // disable Level selection at the start of the scene
+        // disable Level selection and info panel at the start of the scene
         goLevelPanel.SetActive(false);
+        goInfoPanel.SetActive(false);
     }
 
     public void PlayGame()
@@ -30,6 +32,18 @@ public class MainMenuFunction : MonoBehaviour {
     {
         goMainMenuContainer.SetActive(true);
         goLevelPanel.SetActive(false);
+    }
+
+    public void OpenGameInfo()
+    {
+        goMainMenuContainer.SetActive(false);
+        goInfoPanel.SetActive(true);
+    }
+
+    public void CloseGameInfo()
+    {
+        goMainMenuContainer.SetActive(true);
+        goInfoPanel.SetActive(false);
     }
 
     public void EndGame()
