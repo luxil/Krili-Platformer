@@ -929,6 +929,21 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.49999976
       objectReference: {fileID: 0}
+    - target: {fileID: 135266524552998904, guid: 8cc5d660b9e880b418747f2d4d056288,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23489164164923818, guid: 8cc5d660b9e880b418747f2d4d056288,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114548073840134070, guid: 8cc5d660b9e880b418747f2d4d056288,
+        type: 2}
+      propertyPath: goInGameControl
+      value: 
+      objectReference: {fileID: 97259814}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cc5d660b9e880b418747f2d4d056288, type: 2}
   m_IsPrefabParent: 0
