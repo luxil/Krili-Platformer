@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2292136bd18bf944598a4f5a2c31f38d, type: 3}
   m_Name: DoubleCoins
   m_EditorClassIdentifier: 
-  bonusName: Double Coins
-  cost: 1
-  description: 
-  upgrade: double coins
+  sBonusName: Double Coins
+  iCost: 50
+  fDuration: 5
+  sDescription: Double the number of Coins for 5 seconds
+  sUpgrade: double coins

@@ -8,7 +8,7 @@ public class MakeBonusObject : MonoBehaviour {
     [MenuItem("Assets/Create/Bonus Object")]
     public static void createBonusObject()
     {
-        x2Object asset = ScriptableObject.CreateInstance<x2Object>();
+        BonusObject asset = ScriptableObject.CreateInstance<BonusObject>();
         AssetDatabase.CreateAsset(asset, "Assets/NewBonusObject.asset");
         AssetDatabase.SaveAssets();
         EditorUtility.FocusProjectWindow();

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CoinControlScript : MonoBehaviour {
     private int iCoinCounter;
     public GameObject goCoinCounterText;
+    public int iCoinCounterFactor = 1;
 
     // Use this for initialization
     void Start()
@@ -15,7 +16,7 @@ public class CoinControlScript : MonoBehaviour {
 
     public void addCoin(int iNumberOfCoins)
     {
-        iCoinCounter += iNumberOfCoins;
+        iCoinCounter += (iNumberOfCoins * iCoinCounterFactor);
         updateCoinCounterText();
 
     }
@@ -23,5 +24,10 @@ public class CoinControlScript : MonoBehaviour {
     private void updateCoinCounterText()
     {
         goCoinCounterText.GetComponent<UnityEngine.UI.Text>().text = iCoinCounter.ToString();
+    }
+
+    public void updateCoinCounterFactor(int iNewCoinCounterFactor)
+    {
+        iCoinCounterFactor = iNewCoinCounterFactor;
     }
 }
