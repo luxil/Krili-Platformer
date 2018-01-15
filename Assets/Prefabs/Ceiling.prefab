@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33847878411885120}
   - component: {fileID: 65327067659728892}
   - component: {fileID: 23555855304536366}
-  m_Layer: 9
+  - component: {fileID: 114847182014151596}
+  m_Layer: 0
   m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,8 +88,21 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465401764633138}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114847182014151596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465401764633138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa00748a951ba0499c93baad82b0362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goInGameControl: {fileID: 0}
+  goPlayer: {fileID: 0}

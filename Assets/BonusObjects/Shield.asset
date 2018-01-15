@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2292136bd18bf944598a4f5a2c31f38d, type: 3}
-  m_Name: DoubleCoins
+  m_Name: Shield
   m_EditorClassIdentifier: 
-  sBonusName: Double Coins
-  iCost: 50
+  sBonusName: Shield x1
+  iCost: 1
+  iID: 2
   fDuration: 5
-  sDescription: Double the number of Coins for 5 seconds
-  sUpgrade: double coins
+  sDescription: Player could get one hit without losing a heart

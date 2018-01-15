@@ -8,12 +8,15 @@ public class MainMenuFunction : MonoBehaviour {
     public GameObject goMainMenuContainer;
     public GameObject goLevelPanel;
     public GameObject goInfoPanel;
+    public GameObject goShopCanvas;
 
     void Start()
     {
-        // disable Level selection and info panel at the start of the scene
+        // Level selection and info panel at the start of the scene
+        goMainMenuContainer.transform.parent.gameObject.SetActive(true);
         goLevelPanel.SetActive(false);
         goInfoPanel.SetActive(false);
+        goShopCanvas.SetActive(false);
     }
 
     public void PlayGame()

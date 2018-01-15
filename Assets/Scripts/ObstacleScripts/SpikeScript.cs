@@ -9,6 +9,11 @@ public class SpikeScript : MonoBehaviour {
     public GameObject goInGameControl;
     public GameObject goPlayer;
 
+    private void Awake()
+    {
+        goInGameControl = GameObject.Find("InGameMenuControl");
+        goPlayer = GameObject.Find("Player");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
