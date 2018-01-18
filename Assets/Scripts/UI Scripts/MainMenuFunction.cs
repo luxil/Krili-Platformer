@@ -9,22 +9,43 @@ public class MainMenuFunction : MonoBehaviour {
     public GameObject goLevelPanel;
     public GameObject goInfoPanel;
     public GameObject goShopCanvas;
+    public GameObject goCreditsPanel;
 
     void Start()
     {
-        // Level selection and info panel at the start of the scene
+        // turn off all unneeded panels, make sure MainMenuContainer is active
         goMainMenuContainer.transform.parent.gameObject.SetActive(true);
+        goMainMenuContainer.SetActive(true);
         goLevelPanel.SetActive(false);
         goInfoPanel.SetActive(false);
         goShopCanvas.SetActive(false);
+        goCreditsPanel.SetActive(false);
     }
 
+
+    /****************************************************
+     * Start/ Close Game
+     ****************************************************/
     public void PlayGame()
     {
         goMainMenuContainer.SetActive(false);
         goLevelPanel.SetActive(true);
     }
 
+    public void EndGame()
+    {
+        
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit ();
+        #endif
+    }
+
+
+    /****************************************************
+     * Turn Level Selection on/off
+     ****************************************************/
     public void LoadLevel(string selectedLevel)
     {
         // String has to be the Name of the scene!
@@ -37,6 +58,10 @@ public class MainMenuFunction : MonoBehaviour {
         goLevelPanel.SetActive(false);
     }
 
+
+    /****************************************************
+     * Open/Close Game Info
+     ****************************************************/
     public void OpenGameInfo()
     {
         goMainMenuContainer.SetActive(false);
@@ -49,14 +74,22 @@ public class MainMenuFunction : MonoBehaviour {
         goInfoPanel.SetActive(false);
     }
 
-    public void EndGame()
+
+    /****************************************************
+     * Open/Close Credits Panel
+     ****************************************************/
+    public void OpenCredit()
     {
-        
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #else
-                Application.Quit ();
-        #endif
+        goInfoPanel.SetActive(false);
+        goCreditsPanel.SetActive(true);
     }
+
+    public void CloseCredit()
+    {
+        goCreditsPanel.SetActive(false);
+        goInfoPanel.SetActive(true);
+    }
+
+    
 
 }
