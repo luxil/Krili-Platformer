@@ -15,4 +15,4 @@ MonoBehaviour:
   iCost: 1
   iID: 1
   fDuration: 5
-  sDescription: Double the number of Coins for 5 seconds
+  sDescription: Double the number of coins for 5 seconds
