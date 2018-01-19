@@ -2,23 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PreloadBonusObjectsScript : MonoBehaviour {
+public class PreloadBonusObjectsScript : MonoBehaviour
+{ 
+    public static PreloadBonusObjectsScript instance;
     public BonusObject[] boArrBonusObjects;
-    private int iCoinNumber;
     private int iCurrentBonusObject;
 
     void Awake () {
-        iCoinNumber = 3;
+        instance = this;
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
-	
-    public int getICurrentBonusObject()
-    {
-        return iCurrentBonusObject;
-    }
 
-    public void setICurrentBonusObject(int id)
+    public int ICurrentBonusObject
     {
-        iCurrentBonusObject = id;
+        get
+        {
+            return iCurrentBonusObject;
+        }
+
+        set
+        {
+            iCurrentBonusObject = value;
+        }
     }
 }

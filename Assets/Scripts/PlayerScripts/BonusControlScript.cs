@@ -6,13 +6,11 @@ public class BonusControlScript : MonoBehaviour {
     public BonusObject[] goArrBonusObjects;
     public int iCurrentBonusObject = 0;
     float fTimeLeftDoubleCoins;
-    public GameObject go__bonusObjects;
 
     public void Start()
     {
-        go__bonusObjects = GameObject.Find("__bonusObjects");
-        goArrBonusObjects = go__bonusObjects.GetComponent<PreloadBonusObjectsScript>().boArrBonusObjects;
-        iCurrentBonusObject = go__bonusObjects.GetComponent<PreloadBonusObjectsScript>().getICurrentBonusObject();
+        goArrBonusObjects = PreloadBonusObjectsScript.instance.boArrBonusObjects;
+        iCurrentBonusObject = PreloadBonusObjectsScript.instance.ICurrentBonusObject;
     }
 
     private void Update()

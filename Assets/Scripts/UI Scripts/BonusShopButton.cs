@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BonusShopButton : MonoBehaviour {
-    public GameObject go__bonusObjects;
+    //public GameObject go__app;
     public BonusObject [] goArrBonusObjects;
-    public int ICurrentIndex;
+    public int iIndex;
 
     public Text tName;
     public Text tCost;
@@ -14,15 +14,15 @@ public class BonusShopButton : MonoBehaviour {
 
     private void Awake()
     {
-        go__bonusObjects = GameObject.Find("__bonusObjects");
-        goArrBonusObjects = go__bonusObjects.GetComponent<PreloadBonusObjectsScript>().boArrBonusObjects;
+        //goArrBonusObjects = go__app.GetComponent<PreloadBonusObjectsScript>().boArrBonusObjects;
+        goArrBonusObjects = PreloadBonusObjectsScript.instance.boArrBonusObjects;
         setButton();
     }
 
     void setButton()
     {
-        tName.text = goArrBonusObjects[ICurrentIndex].sBonusName;
-        tCost.text = goArrBonusObjects[ICurrentIndex].iCost.ToString();
-        tDescription.text = goArrBonusObjects[ICurrentIndex].sDescription;
+        tName.text = goArrBonusObjects[iIndex].sBonusName;
+        tCost.text = goArrBonusObjects[iIndex].iCost.ToString();
+        tDescription.text = goArrBonusObjects[iIndex].sDescription;
     }
 }
