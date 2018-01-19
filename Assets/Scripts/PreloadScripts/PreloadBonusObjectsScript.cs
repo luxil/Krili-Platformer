@@ -1,15 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PreloadBonusObjectsScript : MonoBehaviour
-{ 
-    public static PreloadBonusObjectsScript instance;
+{
+    private static PreloadBonusObjectsScript instance;
     public BonusObject[] boArrBonusObjects;
     private int iCurrentBonusObject;
 
     void Awake () {
+        //*set instance
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        //Keep the PreloadBonusObjectsScript even if loading level.
+        DontDestroyOnLoad(this.gameObject); 
         instance = this;
+        //*end set instance
+
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
@@ -23,6 +32,22 @@ public class PreloadBonusObjectsScript : MonoBehaviour
         set
         {
             iCurrentBonusObject = value;
+        }
+    }
+
+    public static PreloadBonusObjectsScript Instance
+    {
+        get
+        {
+            if (null == instance)
+            {
+                instance = FindObjectOfType<PreloadBonusObjectsScript>();
+                if (instance == null)
+                {
+                    throw new System.ApplicationException("No PreloadBonusObjectsScript found so no instance can be accessed.");
+                }
+            }
+            return instance;
         }
     }
 }

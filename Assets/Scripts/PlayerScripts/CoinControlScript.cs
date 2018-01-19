@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CoinControlScript : MonoBehaviour {
     private int iCoinCounter;
@@ -10,14 +8,16 @@ public class CoinControlScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        iCoinCounter = 0;
+        iCoinCounter = PreloadPlayerData.Instance.ICoinCount;
         updateCoinCounterText();
     }
 
-    public void addCoin(int iNumberOfCoins)
+    public void addCoins(int iNumberOfCoins)
     {
         iCoinCounter += (iNumberOfCoins * iCoinCounterFactor);
         updateCoinCounterText();
+        PreloadPlayerData.Instance.ICoinCount = iCoinCounter;
+        PreloadPlayerData.Instance.SavePlayerData();
 
     }
 

@@ -4,25 +4,55 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BonusShopButton : MonoBehaviour {
-    //public GameObject go__app;
+    PreloadPlayerData ppdata;
+    
+
     public BonusObject [] goArrBonusObjects;
-    public int iIndex;
+    public int iCurrentBO;
 
     public Text tName;
     public Text tCost;
     public Text tDescription;
 
-    private void Awake()
+    private void Start()
     {
-        //goArrBonusObjects = go__app.GetComponent<PreloadBonusObjectsScript>().boArrBonusObjects;
-        goArrBonusObjects = PreloadBonusObjectsScript.instance.boArrBonusObjects;
+        
+        ppdata = PreloadPlayerData.Instance;
+        MainMenuGOs.Instance.tCointCounter.text = ppdata.ICoinCount.ToString();
+        goArrBonusObjects = PreloadBonusObjectsScript.Instance.boArrBonusObjects;
         setButton();
     }
 
     void setButton()
     {
-        tName.text = goArrBonusObjects[iIndex].sBonusName;
-        tCost.text = goArrBonusObjects[iIndex].iCost.ToString();
-        tDescription.text = goArrBonusObjects[iIndex].sDescription;
+        tName.text = goArrBonusObjects[iCurrentBO].sBonusName;
+        tCost.text = goArrBonusObjects[iCurrentBO].iCost.ToString();
+        tDescription.text = goArrBonusObjects[iCurrentBO].sDescription;
+    }
+
+    public void OnClick()
+    {
+        if(ppdata.ICoinCount >= goArrBonusObjects[iCurrentBO].iCost &&
+            ppdata.iListInventarBO.Count < ppdata.IMaxBO)
+        {
+            ppdata.ICoinCount -= goArrBonusObjects[iCurrentBO].iCost;
+            ppdata.iListInventarBO.Add(iCurrentBO);
+            ppdata.SavePlayerData();
+            
+            Debug.Log(goArrBonusObjects[iCurrentBO].sBonusName + " buyed");
+            Debug.Log(ppdata.ICoinCount + " left");
+
+            MainMenuGOs.Instance.tCointCounter.text = ppdata.ICoinCount.ToString();
+
+            //foreach (int test in ppdata.iListInventarBO)
+            //{
+            //    Debug.Log("List: " + test);
+            //}
+
+        }
+        else
+        {
+            Debug.Log("Not enough money or no space anymore");
+        }
     }
 }

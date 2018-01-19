@@ -9,8 +9,8 @@ public class BonusControlScript : MonoBehaviour {
 
     public void Start()
     {
-        goArrBonusObjects = PreloadBonusObjectsScript.instance.boArrBonusObjects;
-        iCurrentBonusObject = PreloadBonusObjectsScript.instance.ICurrentBonusObject;
+        goArrBonusObjects = PreloadBonusObjectsScript.Instance.boArrBonusObjects;
+        iCurrentBonusObject = PreloadBonusObjectsScript.Instance.ICurrentBonusObject;
     }
 
     private void Update()

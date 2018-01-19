@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         bMovePlayer = true;
+        bGrounded = true;
         fRunningSpeed = cfRunningSpeed;
 
         //ccCharacter = GetComponent<CharacterController>();
@@ -120,6 +121,7 @@ public class PlayerMovement : MonoBehaviour {
                 rbPlayer.AddForce((Vector3.up * 1.15f + Vector3.right * 0.1f) * fJumpForce);
             else
                 rbPlayer.AddForce((Vector3.up * 1.2f + Vector3.right * 0.5f) * fJumpForce);
+           
         }
     }
 

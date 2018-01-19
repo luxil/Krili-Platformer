@@ -1,28 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuFunction : MonoBehaviour {
 
-    public Canvas caPauseMenu;
-    public GameObject goPlayerObject;
-    public GameObject goPauseMenu;
-    public GameObject goGameOver;
+    private Canvas caPauseMenu;
+    private GameObject goPlayerObject;
+    private GameObject goPauseMenu;
+    private GameObject goGameOver;
 
     private bool bStateChange;
-
     private int iCurrentScene;
 
     void Start ()
     {
+        caPauseMenu = PreloadLevel1_Gameobjects.Instance.caPauseMenu;
+        goPlayerObject = PreloadLevel1_Gameobjects.Instance.goPlayerObject;
+        goPauseMenu = PreloadLevel1_Gameobjects.Instance.goPauseMenu;
+        goGameOver = PreloadLevel1_Gameobjects.Instance.goGameOver;
         // disable Canvas at the start of the scene
         caPauseMenu.gameObject.SetActive(false);
 
         goPauseMenu.SetActive(false);
         goGameOver.SetActive(false);
-
+        
         bStateChange = false;
     }
 	
@@ -55,6 +55,7 @@ public class PauseMenuFunction : MonoBehaviour {
 
     public void GoBack()
     {
+        Continue();
         SceneManager.LoadScene("MainMenu");
     }
 
