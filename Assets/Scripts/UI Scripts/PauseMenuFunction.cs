@@ -7,15 +7,22 @@ using UnityEngine.SceneManagement;
 public class PauseMenuFunction : MonoBehaviour {
 
     public Canvas caPauseMenu;
-
     public GameObject goPlayerObject;
+    public GameObject goPauseMenu;
+    public GameObject goGameOver;
 
     private bool bStateChange;
+
+    private int iCurrentScene;
 
     void Start ()
     {
         // disable Canvas at the start of the scene
         caPauseMenu.gameObject.SetActive(false);
+
+        goPauseMenu.SetActive(false);
+        goGameOver.SetActive(false);
+
         bStateChange = false;
     }
 	
@@ -35,6 +42,7 @@ public class PauseMenuFunction : MonoBehaviour {
     {
         Time.timeScale = 0.0f; //paused
         caPauseMenu.gameObject.SetActive(true);
+        goPauseMenu.SetActive(true);
 
         // stop Player if he's currently moving
         if (goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer == true)
@@ -55,13 +63,31 @@ public class PauseMenuFunction : MonoBehaviour {
     {
         Time.timeScale = 1.0f; //unpaused
         caPauseMenu.gameObject.SetActive(false);
+        goPauseMenu.SetActive(false);
+        goGameOver.SetActive(false);
 
         // if player was stopped reactivate movement
-        if(bStateChange == true)
+        if (bStateChange == true)
         {
             goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer = true;
             bStateChange = false;
         }
             
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0.0f; //paused
+        caPauseMenu.gameObject.SetActive(true);
+        goGameOver.SetActive(true);
+    }
+
+    public void RestartLevel()
+    {
+        // find out current scene
+        iCurrentScene = SceneManager.GetActiveScene().buildIndex;
+
+        // reload current scene
+        SceneManager.LoadScene(iCurrentScene, LoadSceneMode.Single);
     }
 }
