@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class BonusShopButton : MonoBehaviour {
     PreloadPlayerData ppdata;
-    
-
     public BonusObject [] goArrBonusObjects;
     public int iCurrentBO;
 
@@ -16,7 +14,6 @@ public class BonusShopButton : MonoBehaviour {
 
     private void Start()
     {
-        
         ppdata = PreloadPlayerData.Instance;
         MainMenuGOs.Instance.tCointCounter.text = ppdata.ICoinCount.ToString();
         goArrBonusObjects = PreloadBonusObjectsScript.Instance.boArrBonusObjects;
@@ -40,15 +37,9 @@ public class BonusShopButton : MonoBehaviour {
             ppdata.SavePlayerData();
             
             Debug.Log(goArrBonusObjects[iCurrentBO].sBonusName + " buyed");
-            Debug.Log(ppdata.ICoinCount + " left");
+            Debug.Log(ppdata.ICoinCount + " coins left");
 
             MainMenuGOs.Instance.tCointCounter.text = ppdata.ICoinCount.ToString();
-
-            //foreach (int test in ppdata.iListInventarBO)
-            //{
-            //    Debug.Log("List: " + test);
-            //}
-
         }
         else
         {

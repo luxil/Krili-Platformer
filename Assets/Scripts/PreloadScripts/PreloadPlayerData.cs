@@ -11,6 +11,7 @@ public class PreloadPlayerData : MonoBehaviour
     public List<int> iListInventarBO = new List<int>();
     //max BonusObjects a player can have
     private int iMaxBO = 10;
+    //
 
     void Awake()
     {
@@ -92,6 +93,11 @@ public class PreloadPlayerData : MonoBehaviour
             ICoinCount = data.iCoinCount;
             iListInventarBO = data.iListInventarBO;
         }
+    }
+
+    public void RemoveFromIvList(int index)
+    {
+        iListInventarBO.Remove(index);
     }
 }
 
