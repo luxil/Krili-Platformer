@@ -12,8 +12,6 @@ public class InventoryScript : MonoBehaviour {
     private BonusObject[] goArrBonusObjects;
     private List<int> iListInventarBO;
     private Button [] button;
-    private Text tName;
-    private Text tDescription;
 
     // Use this for initialization
     private void Start()
@@ -27,11 +25,6 @@ public class InventoryScript : MonoBehaviour {
 
     public void LoadInventory()
     {
-        foreach (int test in ppdata.iListInventarBO)
-        {
-            Debug.Log("List: " + test);
-        }
-
         int iIndexButton = 0;
         foreach (int i in iListInventarBO)
         {
@@ -42,18 +35,14 @@ public class InventoryScript : MonoBehaviour {
             button[iIndexButton].GetComponent<InvBOButton>().tName.text = goArrBonusObjects[i].sBonusName;
             button[iIndexButton].GetComponent<InvBOButton>().tDescription.text = goArrBonusObjects[i].sDescription;
             button[iIndexButton].GetComponent<InvBOButton>().iCurrentBO = i;
-            //button[iIndexButton].onClick.AddListener(OnClickedButton);
-            int test = iIndexButton;
-            button[iIndexButton].GetComponent<Button>().onClick.AddListener(() => { OnClickedButton(test);  });
-            //button[iIndexButton].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("o"); });
+            int iTempIndex = iIndexButton;
+            button[iIndexButton].GetComponent<Button>().onClick.AddListener(() => { OnClickedButton(iTempIndex);  });
             button[iIndexButton].GetComponent<InvBOButton>().iIndexButton = iIndexButton++;
         }
     }
 
     void OnClickedButton(int index)
     {
-        //Debug.Log("index: " + button[index].GetComponent<InvBOButton>().iIndexButton);
-
         button[index].GetComponent<Image>().color = Color.red;
     }
 }

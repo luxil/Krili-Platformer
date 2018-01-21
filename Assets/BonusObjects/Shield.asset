@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   sBonusName: Shield x1
-  iCost: 1
+  iCost: 5
   iID: 2
   fDuration: 5
   sDescription: Player could get one hit without losing a heart
+  sprite: {fileID: 0}

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeartPickUpScript : MonoBehaviour {
-    //get GameObject InGameControl in Canvas
-    public GameObject goInGameControl;
+    private GameObject goPlayerControls;
     HealthControlScript htsScript;
 
     // Use this for initialization
     void Start()
     {
-        htsScript = goInGameControl.GetComponent<HealthControlScript>();
+        goPlayerControls = CommonGameobjects.Instance.goPlayerControls; 
+        htsScript = goPlayerControls.GetComponent<HealthControlScript>();
     }
 
     //if player collides with heart then pick it up

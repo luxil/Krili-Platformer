@@ -128,7 +128,6 @@ public class PlayerMovement : MonoBehaviour {
     //player should crouch
     public void Crouch()
     {
-        Debug.Log("crouch works");
         transform.localScale -= new Vector3(0, 0.6f, 0);
         transform.position -= new Vector3(0, 0.6f, 0);
     }

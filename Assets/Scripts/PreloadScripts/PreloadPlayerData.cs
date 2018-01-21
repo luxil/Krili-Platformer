@@ -10,7 +10,7 @@ public class PreloadPlayerData : MonoBehaviour
     //save all current BonusObjects of the player in the goCurrentBO list
     public List<int> iListInventarBO = new List<int>();
     //max BonusObjects a player can have
-    private int iMaxBO = 10;
+    private int iMaxBO = 6;
     //
 
     void Awake()
@@ -28,7 +28,18 @@ public class PreloadPlayerData : MonoBehaviour
 
         //SavePlayerData();
         LoadPlayerData();
-        Debug.Log(iCoinCount);
+
+        //tests
+        if (iListInventarBO.Count > 0)
+        {
+            iListInventarBO = new List<int>();
+            SavePlayerData();
+
+            foreach (int test in iListInventarBO)
+            {
+                Debug.Log("List: " + test);
+            }
+        }
     }
 
     public static PreloadPlayerData Instance
@@ -95,9 +106,16 @@ public class PreloadPlayerData : MonoBehaviour
         }
     }
 
-    public void RemoveFromIvList(int index)
+    public void RemoveFromIvList(int iObject)
     {
-        iListInventarBO.Remove(index);
+        if (iListInventarBO.Count > 0)
+        {
+            var index = iListInventarBO.FindIndex(i => i == iObject); // like Where/Single
+            if (index >= 0)
+            {   // ensure item found
+                iListInventarBO.RemoveAt(index);
+            }
+        }
     }
 }
 

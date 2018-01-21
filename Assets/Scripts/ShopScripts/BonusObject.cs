@@ -10,5 +10,6 @@ public class BonusObject : ScriptableObject {
     public int iID = 0;
     public float fDuration = 5;
     public string sDescription;
+    public Sprite sprite;
 
 }

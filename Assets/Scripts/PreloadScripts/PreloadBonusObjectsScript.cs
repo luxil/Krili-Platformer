@@ -19,20 +19,14 @@ public class PreloadBonusObjectsScript : MonoBehaviour
         instance = this;
         //*end set instance
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        //load main menu
+        SceneManager.LoadScene(1);
     }
 
     public int ICurrentBonusObject
     {
-        get
-        {
-            return iCurrentBonusObject;
-        }
-
-        set
-        {
-            iCurrentBonusObject = value;
-        }
+        get {return iCurrentBonusObject;}
+        set {iCurrentBonusObject = value;}
     }
 
     public static PreloadBonusObjectsScript Instance

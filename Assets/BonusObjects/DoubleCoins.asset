@@ -16,3 +16,4 @@ MonoBehaviour:
   iID: 1
   fDuration: 5
   sDescription: Double the number of coins for 5 seconds
+  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

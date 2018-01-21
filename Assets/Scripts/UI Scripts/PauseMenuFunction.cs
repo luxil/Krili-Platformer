@@ -13,10 +13,10 @@ public class PauseMenuFunction : MonoBehaviour {
 
     void Start ()
     {
-        caPauseMenu = PreloadLevel1_Gameobjects.Instance.caPauseMenu;
-        goPlayerObject = PreloadLevel1_Gameobjects.Instance.goPlayerObject;
-        goPauseMenu = PreloadLevel1_Gameobjects.Instance.goPauseMenu;
-        goGameOver = PreloadLevel1_Gameobjects.Instance.goGameOver;
+        caPauseMenu = CommonGameobjects.Instance.caPauseMenu;
+        goPlayerObject = CommonGameobjects.Instance.goPlayer;
+        goPauseMenu = CommonGameobjects.Instance.goPauseMenu;
+        goGameOver = CommonGameobjects.Instance.goGameOverPanel;
         // disable Canvas at the start of the scene
         caPauseMenu.gameObject.SetActive(false);
 
