@@ -3,9 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuFunction : MonoBehaviour {
 
-    private Canvas caPauseMenu;
     private GameObject goPlayerObject;
-    private GameObject goPauseMenu;
+    private GameObject goMenuCanvas;
     private GameObject goGameOver;
 
     private bool bStateChange;
@@ -13,14 +12,11 @@ public class PauseMenuFunction : MonoBehaviour {
 
     void Start ()
     {
-        caPauseMenu = CommonGameobjects.Instance.caPauseMenu;
         goPlayerObject = CommonGameobjects.Instance.goPlayer;
-        goPauseMenu = CommonGameobjects.Instance.goPauseMenu;
+        goMenuCanvas = CommonGameobjects.Instance.goMenuCanvas;
         goGameOver = CommonGameobjects.Instance.goGameOverPanel;
         // disable Canvas at the start of the scene
-        caPauseMenu.gameObject.SetActive(false);
-
-        goPauseMenu.SetActive(false);
+        goMenuCanvas.SetActive(false);
         goGameOver.SetActive(false);
         
         bStateChange = false;
@@ -41,8 +37,7 @@ public class PauseMenuFunction : MonoBehaviour {
     public void Pause()
     {
         Time.timeScale = 0.0f; //paused
-        caPauseMenu.gameObject.SetActive(true);
-        goPauseMenu.SetActive(true);
+        goMenuCanvas.SetActive(true);
 
         // stop Player if he's currently moving
         if (goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer == true)
@@ -63,8 +58,7 @@ public class PauseMenuFunction : MonoBehaviour {
     public void Continue()
     {
         Time.timeScale = 1.0f; //unpaused
-        caPauseMenu.gameObject.SetActive(false);
-        goPauseMenu.SetActive(false);
+        goMenuCanvas.SetActive(false);
         goGameOver.SetActive(false);
 
         // if player was stopped reactivate movement
@@ -79,7 +73,7 @@ public class PauseMenuFunction : MonoBehaviour {
     public void GameOver()
     {
         Time.timeScale = 0.0f; //paused
-        caPauseMenu.gameObject.SetActive(true);
+        goMenuCanvas.SetActive(true);
         goGameOver.SetActive(true);
     }
 

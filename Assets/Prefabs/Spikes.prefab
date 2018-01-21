@@ -9,46 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1032613571774274}
+  m_RootGameObject: {fileID: 1269046499281762}
   m_IsPrefabParent: 1
---- !u!1 &1032613571774274
+--- !u!1 &1269046499281762
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4490753444381286}
-  - component: {fileID: 33126737204617310}
-  - component: {fileID: 23268198562964380}
-  - component: {fileID: 136785248865113816}
-  - component: {fileID: 114316927620031658}
+  - component: {fileID: 4424600901016868}
+  - component: {fileID: 33912622567065892}
+  - component: {fileID: 23819469763629868}
+  - component: {fileID: 64821121677101760}
+  - component: {fileID: 136717141231520992}
+  - component: {fileID: 114258465998809402}
   m_Layer: 0
-  m_Name: Spike
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4490753444381286
+--- !u!4 &4424600901016868
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032613571774274}
+  m_GameObject: {fileID: 1269046499281762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.66, y: 3.27, z: 0.44}
+  m_LocalPosition: {x: 6.81, y: 4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23268198562964380
+--- !u!23 &23819469763629868
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032613571774274}
+  m_GameObject: {fileID: 1269046499281762}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -56,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2a5feb3f2e4bcce458300a964196a2b6, type: 2}
+  - {fileID: 2100000, guid: 018702c657d00ab499863f9eedcc9ed5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,36 +75,48 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33126737204617310
+--- !u!33 &33912622567065892
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032613571774274}
-  m_Mesh: {fileID: 4300000, guid: b74954d024cbed344ad3b24f5388f962, type: 3}
---- !u!114 &114316927620031658
+  m_GameObject: {fileID: 1269046499281762}
+  m_Mesh: {fileID: 4300000, guid: d1149614785169044b08af6972b1491c, type: 3}
+--- !u!64 &64821121677101760
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1269046499281762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: d1149614785169044b08af6972b1491c, type: 3}
+--- !u!114 &114258465998809402
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032613571774274}
+  m_GameObject: {fileID: 1269046499281762}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efa00748a951ba0499c93baad82b0362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goInGameControl: {fileID: 0}
-  goPlayer: {fileID: 0}
---- !u!136 &136785248865113816
+--- !u!136 &136717141231520992
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032613571774274}
+  m_GameObject: {fileID: 1269046499281762}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.46316177
-  m_Height: 1.5130016
+  m_Radius: 0.92632353
+  m_Height: 3.0260031
   m_Direction: 1
-  m_Center: {x: -0.6133103, y: -0.74349874, z: -0.54451925}
+  m_Center: {x: -1.2266206, y: -1.4869975, z: -1.0890385}

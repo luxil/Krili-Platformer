@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class FinishScript : MonoBehaviour {
 
-    public GameObject goFinishCanvas;
-    public GameObject goPlayerObject;
-    public GameObject goGameOverPanel;
+    private GameObject goMenuCanvas;
+    private GameObject goPlayer;
+    private GameObject goGameOverPanel;
+
+    private void Start()
+    {
+        goMenuCanvas = CommonGameobjects.Instance.goMenuCanvas;
+        goPlayer = CommonGameobjects.Instance.goPlayer;
+        goGameOverPanel = CommonGameobjects.Instance.goGameOverPanel;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        goFinishCanvas.SetActive(true);
+        goMenuCanvas.SetActive(true);
         goGameOverPanel.SetActive(true);
-        goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer = false;
+        goPlayer.GetComponent<PlayerMovement>().bMovePlayer = false;
     }
 
 }

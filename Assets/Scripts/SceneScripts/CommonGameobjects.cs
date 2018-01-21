@@ -3,9 +3,8 @@
 public class CommonGameobjects : MonoBehaviour {
 
     private static CommonGameobjects instance;
-    public Canvas caPauseMenu;
     public GameObject goPlayer;
-    public GameObject goPauseMenu;
+    public GameObject goMenuCanvas;
     public GameObject goGameOverPanel;
     public GameObject goPlayerControls;
 
