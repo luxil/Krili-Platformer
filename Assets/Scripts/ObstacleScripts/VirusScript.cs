@@ -11,9 +11,14 @@ public class VirusScript : MonoBehaviour {
     private Vector3 v3StartPos;
 
     // variables needed for player health reduction
-    public GameObject goInGameControl;
-    public GameObject goPlayer;
+    private GameObject goPlayerControls;
+    private GameObject goPlayer;
 
+    private void Awake()
+    {
+        goPlayerControls = CommonGameobjects.Instance.goPlayerControls;
+        goPlayer = CommonGameobjects.Instance.goPlayer;
+    }
 
     void Start()
     {
@@ -37,7 +42,7 @@ public class VirusScript : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            goInGameControl.GetComponent<HealthControlScript>().reduceHearts(1);
+            goPlayerControls.GetComponent<HealthControlScript>().reduceHearts(1);
             goPlayer.GetComponent<PlayerHitScript>().playerGotHurt();
         }
     }

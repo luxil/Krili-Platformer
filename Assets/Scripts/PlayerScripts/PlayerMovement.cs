@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour {
             if (bMovePlayer)
                 rbPlayer.AddForce((Vector3.up * 1.15f + Vector3.right * 0.05f) * fJumpForce);
             else
-                rbPlayer.AddForce((Vector3.up * 1.2f + Vector3.right * 0.25f) * fJumpForce);
+                rbPlayer.AddForce((Vector3.up * 1.2f + Vector3.right * 0.3f) * fJumpForce);
            
         }
     }

@@ -51,8 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bf71eb0d6fa7b48b46ab75e446716a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caPauseMenu: {fileID: 0}
   goPlayer: {fileID: 0}
-  goPauseMenu: {fileID: 0}
+  goMenuCanvas: {fileID: 0}
   goGameOverPanel: {fileID: 0}
   goPlayerControls: {fileID: 0}

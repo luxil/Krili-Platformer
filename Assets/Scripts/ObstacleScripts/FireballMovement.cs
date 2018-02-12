@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FireballMovement : MonoBehaviour {
-    private float fFlyingSpeed = -0.25f;
+    private float fFlyingSpeed = -0.175f;
     private float fTimeDestroy = 5f;
     public bool bMoveFireBall = false;
 
