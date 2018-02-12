@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     public float fRunningSpeed;
     public Transform TGroundCheck;
     public float fJumpForce = 1000f;
-    const float cfRunningSpeed = 0.1f;
+    const float cfRunningSpeed = 0.15f;
 
     // tells when the player is falling 
     public bool bFalling = false;
@@ -118,9 +118,9 @@ public class PlayerMovement : MonoBehaviour {
         if (bGrounded)
         {
             if (bMovePlayer)
-                rbPlayer.AddForce((Vector3.up * 1.15f + Vector3.right * 0.1f) * fJumpForce);
+                rbPlayer.AddForce((Vector3.up * 1.15f + Vector3.right * 0.05f) * fJumpForce);
             else
-                rbPlayer.AddForce((Vector3.up * 1.2f + Vector3.right * 0.5f) * fJumpForce);
+                rbPlayer.AddForce((Vector3.up * 1.2f + Vector3.right * 0.25f) * fJumpForce);
            
         }
     }

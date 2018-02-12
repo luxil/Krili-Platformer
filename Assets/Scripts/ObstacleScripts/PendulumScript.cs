@@ -6,11 +6,17 @@ public class PendulumScript : MonoBehaviour {
 
     // variables needed for the pendulum
     public float fSpeed = 1.6f;     // speed at which the pendulum swings
-    public float fAmplitude = 65;   // amplitude
+    public float fAmplitude = 60;   // amplitude
 
     // variables needed for health reduction
-    public GameObject goInGameControl;
-    public GameObject goPlayer;
+    private GameObject goPlayerControls;
+    private GameObject goPlayer;
+
+    void Awake()
+    {
+        goPlayerControls = CommonGameobjects.Instance.goPlayerControls;
+        goPlayer = CommonGameobjects.Instance.goPlayer;
+    }
 
     void Update()
     {
@@ -21,7 +27,8 @@ public class PendulumScript : MonoBehaviour {
         ///     based on: https://forum.unity-community.de/topic/12484-pendel-soll-endlos-schwingen/
         ///  </summary>
 
-        transform.rotation = Quaternion.Euler(Mathf.Sin(Time.time * fSpeed) * fAmplitude, 0, 0);
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Sin(Time.time * fSpeed) * fAmplitude);
+        //transform.rotation = Quaternion.Euler(Mathf.Sin(Time.time * fSpeed) * fAmplitude, 0, 0);
 
     }
 
@@ -30,7 +37,7 @@ public class PendulumScript : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            goInGameControl.GetComponent<HealthControlScript>().reduceHearts(1);
+            goPlayerControls.GetComponent<HealthControlScript>().reduceHearts(1);
             goPlayer.GetComponent<PlayerHitScript>().playerGotHurt();
         }
     }

@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224224124341780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 172.9, y: 12.16, z: -0.64}
+  m_LocalPosition: {x: 172.9, y: 14, z: -0.64}
   m_LocalScale: {x: 0.3, y: 0.2, z: 0.5}
   m_Children:
   - {fileID: 4665861791023332}
@@ -246,9 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fSpeed: 1.6
-  fAmplitude: 30
-  goInGameControl: {fileID: 0}
-  goPlayer: {fileID: 0}
+  fAmplitude: 60
 --- !u!135 &135057884637249884
 SphereCollider:
   m_ObjectHideFlags: 1
