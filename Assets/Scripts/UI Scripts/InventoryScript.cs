@@ -7,6 +7,7 @@ public class InventoryScript : MonoBehaviour {
     PreloadPlayerData ppdata;
 
     public GameObject goInventoryBOPanel;
+    public GameObject goShopCanvas;
     public Button buInvBOButton;
     public int iCountSelectedBo = 0;
 
@@ -28,13 +29,7 @@ public class InventoryScript : MonoBehaviour {
 
     public void Start()
     {
-        foreach (Button but in button)
-        {
-            if (but != null)
-            {
-                but.interactable = bActivateAllButtons;
-            }
-        }
+        ActiveShopAndButtons();
     }
 
     public void LoadInventory()
@@ -95,5 +90,20 @@ public class InventoryScript : MonoBehaviour {
     public void SetBoolActivateAllButtons(bool bActivateAllButtons)
     {
         this.bActivateAllButtons = bActivateAllButtons;
+    }
+
+    public void ActiveShopAndButtons()
+    {
+        if (button != null)
+        {
+            goShopCanvas.SetActive(!bActivateAllButtons);
+            foreach (Button but in button)
+            {
+                if (but != null)
+                {
+                    but.interactable = bActivateAllButtons;
+                }
+            }
+        }
     }
 }
