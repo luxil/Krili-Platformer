@@ -9,6 +9,7 @@ public class HealthControlScript : MonoBehaviour
 
     public GameObject[] goHearts = new GameObject[4];
     public int iHealth;
+    private bool bShieldActive = false;
 
     // Use this for initialization
     void Start()
@@ -25,8 +26,15 @@ public class HealthControlScript : MonoBehaviour
 
     public void reduceHearts(int iNumberOfHearts)
     {
-        iHealth -= iNumberOfHearts;
-        setActiveHearts();
+        if (!bShieldActive)
+        {
+            iHealth -= iNumberOfHearts;
+            setActiveHearts();
+        }
+        else
+        {
+            deactivateShield();
+        }
     }
 
     void setActiveHearts()
@@ -38,5 +46,19 @@ public class HealthControlScript : MonoBehaviour
             else
                 goHearts[i].gameObject.SetActive(false);
         }
+        if (iHealth < 0)
+        {
+            Debug.Log("tooot");
+        }
+    }
+
+    public void activateShield()
+    {
+        bShieldActive = true;
+    }
+
+    public void deactivateShield()
+    {
+        bShieldActive = false;
     }
 }

@@ -7,5 +7,6 @@ public class InvBOButton : MonoBehaviour {
     public Text tDescription;
     public int iIndexButton;
     public int iCurrentBO;
+    public bool bSelected;
 
 }

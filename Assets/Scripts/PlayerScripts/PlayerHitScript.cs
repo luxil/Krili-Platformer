@@ -16,7 +16,8 @@ public class PlayerHitScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rendPlayer = GetComponent<Renderer>();
-        colorStart = rendPlayer.material.color;
+        //colorStart = rendPlayer.material.color;
+        Debug.Log("there is something wrong with the color");
         bPlayerGotHit = false;
     }
 	

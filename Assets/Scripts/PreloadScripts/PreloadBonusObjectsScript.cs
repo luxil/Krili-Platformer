@@ -5,7 +5,9 @@ public class PreloadBonusObjectsScript : MonoBehaviour
 {
     private static PreloadBonusObjectsScript instance;
     public BonusObject[] boArrBonusObjects;
-    private int iCurrentBonusObject;
+    private int iCurrentBonusObject = -1;
+    private int iCurrentBonusObject2 = -1;
+    private int iMaxCurrentBonusObjects = 2;
 
     void Awake () {
         //*set instance
@@ -25,8 +27,14 @@ public class PreloadBonusObjectsScript : MonoBehaviour
 
     public int ICurrentBonusObject
     {
-        get {return iCurrentBonusObject;}
-        set {iCurrentBonusObject = value;}
+        get
+        {
+            return iCurrentBonusObject;
+        }
+        set
+        {
+            iCurrentBonusObject = value;
+        }
     }
 
     public static PreloadBonusObjectsScript Instance
@@ -42,6 +50,32 @@ public class PreloadBonusObjectsScript : MonoBehaviour
                 }
             }
             return instance;
+        }
+    }
+
+    public int ICurrentBonusObject2
+    {
+        get
+        {
+            return iCurrentBonusObject2;
+        }
+
+        set
+        {
+            iCurrentBonusObject2 = value;
+        }
+    }
+
+    public int IMaxCurrentBonusObjects
+    {
+        get
+        {
+            return iMaxCurrentBonusObjects;
+        }
+
+        set
+        {
+            iMaxCurrentBonusObjects = value;
         }
     }
 }

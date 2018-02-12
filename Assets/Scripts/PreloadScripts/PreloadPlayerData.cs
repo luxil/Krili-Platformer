@@ -7,7 +7,7 @@ public class PreloadPlayerData : MonoBehaviour
 {
     private static PreloadPlayerData instance;
     private int iCoinCount = 0;
-    //save all current BonusObjects of the player in the goCurrentBO list
+    //save all current BonusObjects of the player in the iListInventarBO list
     public List<int> iListInventarBO = new List<int>();
     //max BonusObjects a player can have
     private int iMaxBO = 6;
@@ -30,7 +30,7 @@ public class PreloadPlayerData : MonoBehaviour
         LoadPlayerData();
 
         //tests
-        if (iListInventarBO.Count > 0)
+        if (iListInventarBO.Count < 0)
         {
             iListInventarBO = new List<int>();
             SavePlayerData();
@@ -90,6 +90,7 @@ public class PreloadPlayerData : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
+        LoadPlayerData();
     }
 
     public void LoadPlayerData()
