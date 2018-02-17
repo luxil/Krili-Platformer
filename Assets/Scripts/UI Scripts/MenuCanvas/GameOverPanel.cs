@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameOverPanel : MonoBehaviour {
-    public void Continue()
+    public void Restart()
     {
         CommonGameobjects.Instance.goEventSystem.GetComponent<PauseMenuFunction>().RestartLevel();
     }
