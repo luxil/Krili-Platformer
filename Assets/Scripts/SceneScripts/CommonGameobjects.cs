@@ -8,6 +8,8 @@ public class CommonGameobjects : MonoBehaviour {
     public GameObject goGameOverPanel;
     public GameObject goPlayerControls;
     public GameObject goEventSystem;
+	public GameObject goLevelCompletePanel;
+    public GameObject goPausePanel;
 
     void Start()
     {
