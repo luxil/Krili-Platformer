@@ -10,12 +10,17 @@ public class HealthControlScript : MonoBehaviour
     public GameObject[] goHearts = new GameObject[4];
     public int iHealth;
     private bool bShieldActive = false;
+	
+	private GameObject goGameOverPanel;
+	private GameObject goMenuCanvas;
 
     // Use this for initialization
     void Start()
     {
         iHealth = 2;
         setActiveHearts();
+		goGameOverPanel = CommonGameobjects.Instance.goGameOverPanel;
+		goMenuCanvas = CommonGameobjects.Instance.goMenuCanvas;
     }
 
     public void addHearts(int iNumberOfHearts)
@@ -49,6 +54,8 @@ public class HealthControlScript : MonoBehaviour
         if (iHealth < 0)
         {
             Debug.Log("tooot");
+			goMenuCanvas.SetActive(true);
+			goGameOverPanel.SetActive(true);
         }
     }
 

@@ -6,6 +6,7 @@ public class PauseMenuFunction : MonoBehaviour {
     private GameObject goPlayerObject;
     private GameObject goMenuCanvas;
     private GameObject goGameOver;
+	private GameObject goPausePanel;
 
     private bool bStateChange;
     private int iCurrentScene;
@@ -14,6 +15,7 @@ public class PauseMenuFunction : MonoBehaviour {
     {
         goPlayerObject = CommonGameobjects.Instance.goPlayer;
         goMenuCanvas = CommonGameobjects.Instance.goMenuCanvas;
+		goPausePanel = CommonGameobjects.Instance.goPausePanel;
         goGameOver = CommonGameobjects.Instance.goGameOverPanel;
         // disable Canvas at the start of the scene
         goMenuCanvas.SetActive(false);
@@ -38,6 +40,7 @@ public class PauseMenuFunction : MonoBehaviour {
     {
         Time.timeScale = 0.0f; //paused
         goMenuCanvas.SetActive(true);
+		goPausePanel.SetActive(true);
 
         // stop Player if he's currently moving
         if (goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer == true)
@@ -60,6 +63,7 @@ public class PauseMenuFunction : MonoBehaviour {
         Time.timeScale = 1.0f; //unpaused
         goMenuCanvas.SetActive(false);
         goGameOver.SetActive(false);
+		goPausePanel.SetActive(false);
 
         // if player was stopped reactivate movement
         if (bStateChange == true)
