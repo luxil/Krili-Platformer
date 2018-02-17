@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 222570555878654364}
   - component: {fileID: 114511711101975952}
   - component: {fileID: 114254900468122616}
+  - component: {fileID: 114659128556887326}
   m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
@@ -777,6 +778,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb695cb8a756ef478b619723ee7d31a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: 18e031fb6bf223d418d57f12e091617b, type: 3}
+  - {fileID: 2800000, guid: 298fcac568bf32d4b9413d2a91229171, type: 3}
   bPlayerGotHit: 0
   fStartTime: 0
 --- !u!114 &114218640588110716
@@ -839,8 +843,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Pause
+      - m_Target: {fileID: 114659128556887326}
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1053,6 +1057,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114659128556887326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137884188949074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22b46c2e5779534982122b364ca24eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114705709878571400
 MonoBehaviour:
   m_ObjectHideFlags: 1

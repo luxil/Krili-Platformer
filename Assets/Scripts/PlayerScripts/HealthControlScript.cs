@@ -48,7 +48,8 @@ public class HealthControlScript : MonoBehaviour
         }
         if (iHealth < 0)
         {
-            Debug.Log("tooot");
+            CommonGameobjects.Instance.goMenuCanvas.SetActive(true);
+            CommonGameobjects.Instance.goGameOverPanel.SetActive(true);
         }
     }
 

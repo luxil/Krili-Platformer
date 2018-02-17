@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHitScript : MonoBehaviour {
-    private Color colorStart;
-    private Color colorHit = Color.red;
+    public Texture[] textures;
     //duration of lerp
-    private float fDurationLerp = 0.2F;
+    private float changeInterval = 0.1F;
     //duration of player flashing
     private float fDurationFlash = 0.7F;
     private Renderer rendPlayer;
@@ -16,8 +15,6 @@ public class PlayerHitScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rendPlayer = GetComponent<Renderer>();
-        //colorStart = rendPlayer.material.color;
-        Debug.Log("there is something wrong with the color");
         bPlayerGotHit = false;
     }
 	
@@ -25,12 +22,16 @@ public class PlayerHitScript : MonoBehaviour {
 	void Update () {
         if(bPlayerGotHit && fStartTime + fDurationFlash > Time.time)
         {
-            float lerp = Mathf.PingPong(Time.time, fDurationLerp) / fDurationLerp;
-            rendPlayer.material.color = Color.Lerp(colorStart, colorHit, lerp);
+            if (textures.Length == 0)
+                return;
+
+            int index = Mathf.FloorToInt(Time.time / changeInterval);
+            index = index % textures.Length;
+            rendPlayer.material.mainTexture = textures[index];
         }
         else
         {
-            rendPlayer.material.color = colorStart;
+            rendPlayer.material.mainTexture = textures[0];
             bPlayerGotHit = false;
         }
     }

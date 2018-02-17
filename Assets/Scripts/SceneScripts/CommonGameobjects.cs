@@ -7,6 +7,7 @@ public class CommonGameobjects : MonoBehaviour {
     public GameObject goMenuCanvas;
     public GameObject goGameOverPanel;
     public GameObject goPlayerControls;
+    public GameObject goEventSystem;
 
     void Start()
     {
