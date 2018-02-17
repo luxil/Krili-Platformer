@@ -14,7 +14,7 @@ public class InventoryScript : MonoBehaviour {
     private BonusObject[] goArrBonusObjects;
     private List<int> iListInventarBO;
     private Button [] button;
-    private bool bActivateAllButtons = false;
+    public bool bActivateAllButtons = false;
     Color colOldColor;
 
     // Use this for initialization
@@ -29,7 +29,7 @@ public class InventoryScript : MonoBehaviour {
 
     public void Start()
     {
-        ActiveShopAndButtons();
+        //ActiveShopAndButtons();
     }
 
     public void LoadInventory()
@@ -92,11 +92,10 @@ public class InventoryScript : MonoBehaviour {
         this.bActivateAllButtons = bActivateAllButtons;
     }
 
-    public void ActiveShopAndButtons()
+    public void ActivateButtons()
     {
         if (button != null)
         {
-            goShopCanvas.SetActive(!bActivateAllButtons);
             foreach (Button but in button)
             {
                 if (but != null)
@@ -105,5 +104,10 @@ public class InventoryScript : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public void ActivateShopCanvas()
+    {
+        goShopCanvas.SetActive(!bActivateAllButtons);
     }
 }

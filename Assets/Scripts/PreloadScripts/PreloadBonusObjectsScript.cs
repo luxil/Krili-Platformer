@@ -22,7 +22,7 @@ public class PreloadBonusObjectsScript : MonoBehaviour
         //*end set instance
 
         //load main menu
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
     }
 
     public int ICurrentBonusObject

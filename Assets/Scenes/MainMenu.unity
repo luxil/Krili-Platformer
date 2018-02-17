@@ -585,8 +585,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1033800816}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 1605548814}
+        m_MethodName: SetBoolActivateAllButtons
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -597,8 +597,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1605548814}
-        m_MethodName: SetBoolActivateAllButtons
-        m_Mode: 6
+        m_MethodName: ActivateButtons
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 693991016}
   - component: {fileID: 693991015}
   m_Layer: 5
-  m_Name: Button
+  m_Name: AddBonusObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1121,18 +1121,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1605548814}
-        m_MethodName: ActiveShopAndButtons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1605548814}
-        m_MethodName: SetCurrentBoForLevel
+        m_MethodName: ActivateButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1362,18 +1351,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1605548814}
-        m_MethodName: SetBoolActivateAllButtons
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1605548814}
-        m_MethodName: ActiveShopAndButtons
+        m_MethodName: ActivateShopCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1503,7 +1481,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 776264540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2064277833}
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level02
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &776264540
@@ -3356,6 +3345,7 @@ MonoBehaviour:
   goShopCanvas: {fileID: 1033800816}
   buInvBOButton: {fileID: 1748060869}
   iCountSelectedBo: 0
+  bActivateAllButtons: 0
 --- !u!114 &1605548815
 MonoBehaviour:
   m_ObjectHideFlags: 0
