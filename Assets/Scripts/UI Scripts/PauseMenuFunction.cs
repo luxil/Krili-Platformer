@@ -89,4 +89,10 @@ public class PauseMenuFunction : MonoBehaviour {
         // reload current scene
         SceneManager.LoadScene(iCurrentScene, LoadSceneMode.Single);
     }
+
+    public void NextLevel(string nextLevel)
+    {
+        // String typed in the inspector has to be the name of the scene!
+        SceneManager.LoadScene(nextLevel);
+    }
 }

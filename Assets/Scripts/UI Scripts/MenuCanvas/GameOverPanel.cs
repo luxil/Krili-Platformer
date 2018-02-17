@@ -12,4 +12,9 @@ public class GameOverPanel : MonoBehaviour {
     {
         CommonGameobjects.Instance.goEventSystem.GetComponent<PauseMenuFunction>().GoBack();
     }
+
+    public void NextLevel(string nextLevelName)
+    {
+        CommonGameobjects.Instance.goEventSystem.GetComponent<PauseMenuFunction>().NextLevel(nextLevelName);
+    }
 }
