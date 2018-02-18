@@ -3270,7 +3270,6 @@ MonoBehaviour:
   goShopCanvas: {fileID: 1033800816}
   buInvBOButton: {fileID: 1748060869}
   iCountSelectedBo: 0
-  bActivateAllButtons: 0
 --- !u!114 &1605548815
 MonoBehaviour:
   m_ObjectHideFlags: 0

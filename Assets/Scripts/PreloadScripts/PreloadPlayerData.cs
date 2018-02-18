@@ -26,7 +26,6 @@ public class PreloadPlayerData : MonoBehaviour
         instance = this;
         //*end set instance
 
-        //SavePlayerData();
         LoadPlayerData();
 
         //tests
@@ -90,7 +89,6 @@ public class PreloadPlayerData : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
-        //LoadPlayerData();
     }
 
     public void LoadPlayerData()

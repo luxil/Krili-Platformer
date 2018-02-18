@@ -13,7 +13,7 @@ public class InventoryScript : MonoBehaviour {
 
     private BonusObject[] goArrBonusObjects;
     private List<int> iListInventarBO;
-    private Button [] button;
+    private Button [] butArrbutton;
     private bool bActivateAllButtons = false;
     Color colOldColor;
 
@@ -23,7 +23,7 @@ public class InventoryScript : MonoBehaviour {
         ppdata = PreloadPlayerData.Instance;
         goArrBonusObjects = PreloadBonusObjectsScript.Instance.boArrBonusObjects;
         iListInventarBO = ppdata.iListInventarBO;
-        button = new Button[ppdata.IMaxBO];
+        butArrbutton = new Button[ppdata.IMaxBO];
         LoadInventory();
     }
 
@@ -34,35 +34,47 @@ public class InventoryScript : MonoBehaviour {
 
     public void LoadInventory()
     {
+        if (butArrbutton != null)
+        {
+            foreach (Button but in butArrbutton)
+            {
+                if (but != null)
+                {
+                    Destroy(but.gameObject);
+                }
+            }
+        }
+        ppdata.LoadPlayerData();
+        iListInventarBO = ppdata.iListInventarBO;
         int iIndexButton = 0;
         foreach (int i in iListInventarBO)
         {
-            button[iIndexButton] = Instantiate(buInvBOButton);
-            button[iIndexButton].transform.SetParent(goInventoryBOPanel.transform);
-            button[iIndexButton].gameObject.SetActive(true);
-            button[iIndexButton].transform.localScale = new Vector3(1,1,1);
-            button[iIndexButton].GetComponent<InvBOButton>().tName.text = goArrBonusObjects[i].sBonusName;
-            button[iIndexButton].GetComponent<InvBOButton>().tDescription.text = goArrBonusObjects[i].sDescription;
-            button[iIndexButton].GetComponent<InvBOButton>().iCurrentBO = i;
+            butArrbutton[iIndexButton] = Instantiate(buInvBOButton);
+            butArrbutton[iIndexButton].transform.SetParent(goInventoryBOPanel.transform);
+            butArrbutton[iIndexButton].gameObject.SetActive(true);
+            butArrbutton[iIndexButton].transform.localScale = new Vector3(1,1,1);
+            butArrbutton[iIndexButton].GetComponent<InvBOButton>().tName.text = goArrBonusObjects[i].sBonusName;
+            butArrbutton[iIndexButton].GetComponent<InvBOButton>().tDescription.text = goArrBonusObjects[i].sDescription;
+            butArrbutton[iIndexButton].GetComponent<InvBOButton>().iCurrentBO = i;
             int iTempIndex = iIndexButton;
-            button[iIndexButton].GetComponent<Button>().onClick.AddListener(() => { OnClickedButton(iTempIndex);  });
-            button[iIndexButton].GetComponent<InvBOButton>().iIndexButton = iIndexButton++;
+            butArrbutton[iIndexButton].GetComponent<Button>().onClick.AddListener(() => { OnClickedButton(iTempIndex);  });
+            butArrbutton[iIndexButton].GetComponent<InvBOButton>().iIndexButton = iIndexButton++;
         }
     }
 
     void OnClickedButton(int index)
     {
-        if (!button[index].GetComponent<InvBOButton>().bSelected && PreloadBonusObjectsScript.Instance.IMaxCurrentBonusObjects> iCountSelectedBo)
+        if (!butArrbutton[index].GetComponent<InvBOButton>().bSelected && PreloadBonusObjectsScript.Instance.IMaxCurrentBonusObjects> iCountSelectedBo)
         {
-            colOldColor = button[index].GetComponent<Image>().color;
-            button[index].GetComponent<Image>().color = Color.green;
-            button[index].GetComponent<InvBOButton>().bSelected = true;
+            colOldColor = butArrbutton[index].GetComponent<Image>().color;
+            butArrbutton[index].GetComponent<Image>().color = Color.green;
+            butArrbutton[index].GetComponent<InvBOButton>().bSelected = true;
             iCountSelectedBo++;
         }
-        else if (button[index].GetComponent<InvBOButton>().bSelected)
+        else if (butArrbutton[index].GetComponent<InvBOButton>().bSelected)
         {
-            button[index].GetComponent<Image>().color = colOldColor;
-            button[index].GetComponent<InvBOButton>().bSelected = false;
+            butArrbutton[index].GetComponent<Image>().color = colOldColor;
+            butArrbutton[index].GetComponent<InvBOButton>().bSelected = false;
             iCountSelectedBo--;
         }
     }
@@ -71,7 +83,7 @@ public class InventoryScript : MonoBehaviour {
     {
         int iSelectButton = -1;
         int iSelectButton2 = -1;
-        foreach (Button but in button)
+        foreach (Button but in butArrbutton)
         {
             if(but != null && but.GetComponent<InvBOButton>().bSelected && iSelectButton==-1)
             {
@@ -89,14 +101,16 @@ public class InventoryScript : MonoBehaviour {
 
     public void SetBoolActivateAllButtons(bool bActivateAllButtons)
     {
+        LoadInventory();
+        iCountSelectedBo = 0;
         this.bActivateAllButtons = bActivateAllButtons;
     }
 
     public void ActivateButtons()
     {
-        if (button != null)
+        if (butArrbutton != null)
         {
-            foreach (Button but in button)
+            foreach (Button but in butArrbutton)
             {
                 if (but != null)
                 {

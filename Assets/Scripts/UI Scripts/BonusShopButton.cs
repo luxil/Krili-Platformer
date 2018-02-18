@@ -30,8 +30,7 @@ public class BonusShopButton : MonoBehaviour {
 
     public void OnClick()
     {
-        if(ppdata.ICoinCount >= goArrBonusObjects[iCurrentBO].iCost &&
-            ppdata.iListInventarBO.Count < ppdata.IMaxBO)
+        if (ppdata.ICoinCount >= goArrBonusObjects[iCurrentBO].iCost && ppdata.iListInventarBO.Count < ppdata.IMaxBO)
         {
             ppdata.ICoinCount -= goArrBonusObjects[iCurrentBO].iCost;
             ppdata.iListInventarBO.Add(iCurrentBO);

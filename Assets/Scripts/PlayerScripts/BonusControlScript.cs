@@ -28,6 +28,8 @@ public class BonusControlScript : MonoBehaviour {
         PreloadBonusObjectsScript.Instance.ICurrentBonusObject2 = -1;
         PreloadPlayerData.Instance.RemoveFromIvList(iCurrentBonusObject);
         PreloadPlayerData.Instance.RemoveFromIvList(iCurrentBonusObject2);
+
+        PreloadPlayerData.Instance.SavePlayerData();
     }
 
     private void ActivateBonusObject(int iIndexBO)
