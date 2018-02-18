@@ -22,19 +22,7 @@ public class PreloadBonusObjectsScript : MonoBehaviour
         //*end set instance
 
         //load main menu
-        SceneManager.LoadScene(1);
-    }
-
-    public int ICurrentBonusObject
-    {
-        get
-        {
-            return iCurrentBonusObject;
-        }
-        set
-        {
-            iCurrentBonusObject = value;
-        }
+        SceneManager.LoadScene(3);
     }
 
     public static PreloadBonusObjectsScript Instance
@@ -50,6 +38,18 @@ public class PreloadBonusObjectsScript : MonoBehaviour
                 }
             }
             return instance;
+        }
+    }
+
+    public int ICurrentBonusObject
+    {
+        get
+        {
+            return iCurrentBonusObject;
+        }
+        set
+        {
+            iCurrentBonusObject = value;
         }
     }
 

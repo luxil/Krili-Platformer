@@ -6,17 +6,14 @@ public class MovingPlatformOnColScript : MonoBehaviour {
 
     // platform speed (public so it's easily changeable in the editor)
     public float speed = 1;
-
     // platform direction (1 = forward, -1 = backwards)
     private int direction = 1;
-
     // check to see if player is currently on the platform
     private bool bPlayerOnPlatform = false;
 
     void Update()
     {
         // platform movement
-        // transform.right = Vector3(1, 0, 0)
         if (bPlayerOnPlatform)
             transform.Translate(transform.right * speed * direction * Time.deltaTime);
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
+
     //move the player or not
     public bool bMovePlayer, bGrounded;
     //running speed of the player
@@ -33,8 +34,6 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        //bGrounded = Physics.Linecast(transform.position, TGroundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
         //move the player along the x-Axis
         if (bMovePlayer)
@@ -76,23 +75,32 @@ public class PlayerMovement : MonoBehaviour {
         //    fRunningSpeed = cfRunningSpeed;
         //}
 
+        // if character not grounded...
         if (!bGrounded)
         {
+            // assume it's falling 
             bFalling = true;
         }
 
+        // if character grounded... 
         else
         {
+            // but was falling last update... 
             if (bFalling)
-            { // but was falling last update... 
-                var hFall = fLastY - transform.position.y;
+            { 
                 // calculate the fall height... 
+                var hFall = fLastY - transform.position.y;
+                
+                // then check the damage/death 
                 if (hFall > 8)
-                { // then check the damage/death // player is dead 
-                    Debug.Log("PLAYER DEAD");
+                {
+                    // player is dead 
+                    CommonGameobjects.Instance.goMenuCanvas.SetActive(true);
+                    CommonGameobjects.Instance.goGameOverPanel.SetActive(true);
                 }
             }
-            fLastY = transform.position.y; // update lastY when character grounded 
+            // update lastY when character grounded 
+            fLastY = transform.position.y; 
         }
         
     }
@@ -115,6 +123,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Jump()
     {
+        //only allow jump if player is on the ground
         if (bGrounded)
         {
             if (bMovePlayer)

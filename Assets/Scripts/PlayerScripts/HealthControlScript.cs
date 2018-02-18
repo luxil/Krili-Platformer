@@ -6,7 +6,6 @@ public class HealthControlScript : MonoBehaviour
 {
 
     //tutorial from: https://www.youtube.com/watch?v=LsUiJItfzxU
-
     public GameObject[] goHearts = new GameObject[4];
     public int iHealth;
     private bool bShieldActive = false;
@@ -18,31 +17,34 @@ public class HealthControlScript : MonoBehaviour
     void Start()
     {
         iHealth = 2;
-        setActiveHearts();
+        SetActiveHearts();
 		goGameOverPanel = CommonGameobjects.Instance.goGameOverPanel;
 		goMenuCanvas = CommonGameobjects.Instance.goMenuCanvas;
     }
 
-    public void addHearts(int iNumberOfHearts)
+    //add hearts
+    public void AddHearts(int iNumberOfHearts)
     {
         iHealth += iNumberOfHearts;
-        setActiveHearts();
+        SetActiveHearts();
     }
 
-    public void reduceHearts(int iNumberOfHearts)
+    //reduce hearts
+    public void ReduceHearts(int iNumberOfHearts)
     {
         if (!bShieldActive)
         {
             iHealth -= iNumberOfHearts;
-            setActiveHearts();
+            SetActiveHearts();
         }
         else
         {
-            deactivateShield();
+            DeactivateShield();
         }
     }
 
-    void setActiveHearts()
+    //update active hearts
+    private void SetActiveHearts()
     {
         for (int i = 0; i < goHearts.Length; i++)
         {
@@ -51,20 +53,21 @@ public class HealthControlScript : MonoBehaviour
             else
                 goHearts[i].gameObject.SetActive(false);
         }
+        //check whether player is dead
         if (iHealth < 0)
         {
-            Debug.Log("tooot");
+            //player is dead
 			goMenuCanvas.SetActive(true);
 			goGameOverPanel.SetActive(true);
         }
     }
 
-    public void activateShield()
+    public void ActivateShield()
     {
         bShieldActive = true;
     }
 
-    public void deactivateShield()
+    public void DeactivateShield()
     {
         bShieldActive = false;
     }

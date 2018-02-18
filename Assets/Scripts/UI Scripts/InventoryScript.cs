@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryScript : MonoBehaviour {
-    PreloadPlayerData ppdata;
 
+    private PreloadPlayerData ppdata;
     public GameObject goInventoryBOPanel;
     public GameObject goShopCanvas;
     public Button buInvBOButton;
@@ -14,7 +14,7 @@ public class InventoryScript : MonoBehaviour {
     private BonusObject[] goArrBonusObjects;
     private List<int> iListInventarBO;
     private Button [] button;
-    public bool bActivateAllButtons = false;
+    private bool bActivateAllButtons = false;
     Color colOldColor;
 
     // Use this for initialization

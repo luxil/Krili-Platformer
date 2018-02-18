@@ -1,32 +1,34 @@
 ﻿using UnityEngine;
 
 public class CoinControlScript : MonoBehaviour {
+
     private int iCoinCounter;
     public GameObject goCoinCounterText;
+    //for example needed for DoubleCoin
     public int iCoinCounterFactor = 1;
 
     // Use this for initialization
     void Start()
     {
         iCoinCounter = PreloadPlayerData.Instance.ICoinCount;
-        updateCoinCounterText();
+        UpdateCoinCounterText();
     }
 
-    public void addCoins(int iNumberOfCoins)
+    public void AddCoins(int iNumberOfCoins)
     {
         iCoinCounter += (iNumberOfCoins * iCoinCounterFactor);
-        updateCoinCounterText();
+        UpdateCoinCounterText();
         PreloadPlayerData.Instance.ICoinCount = iCoinCounter;
         PreloadPlayerData.Instance.SavePlayerData();
 
     }
 
-    private void updateCoinCounterText()
+    private void UpdateCoinCounterText()
     {
         goCoinCounterText.GetComponent<UnityEngine.UI.Text>().text = iCoinCounter.ToString();
     }
 
-    public void updateCoinCounterFactor(int iNewCoinCounterFactor)
+    public void UpdateCoinCounterFactor(int iNewCoinCounterFactor)
     {
         iCoinCounterFactor = iNewCoinCounterFactor;
     }

@@ -6,9 +6,8 @@ public class MovingPlatformScript : MonoBehaviour {
 
     // platform speed (public so it's easily changeable in the editor)
     public float speed = 3;
-
     // platform direction (1 = forward, -1 = backwards)
-    public int direction = 1;
+    private int direction = 1;
 
     void Update()
     {

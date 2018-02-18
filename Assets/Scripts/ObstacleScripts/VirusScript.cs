@@ -27,7 +27,6 @@ public class VirusScript : MonoBehaviour {
 
     void Update()
     {
-
         // set direction
         if (transform.position.y > v3StartPos.y + fLimit)   // if position is greater than starting position + limit, change direction
             iDirection = -1;
@@ -42,8 +41,8 @@ public class VirusScript : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            goPlayerControls.GetComponent<HealthControlScript>().reduceHearts(1);
-            goPlayer.GetComponent<PlayerHitScript>().playerGotHurt();
+            goPlayerControls.GetComponent<HealthControlScript>().ReduceHearts(1);
+            goPlayer.GetComponent<PlayerHitScript>().PlayerGotHurt();
         }
     }
 }

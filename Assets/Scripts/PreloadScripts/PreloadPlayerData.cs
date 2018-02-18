@@ -90,7 +90,7 @@ public class PreloadPlayerData : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
-        LoadPlayerData();
+        //LoadPlayerData();
     }
 
     public void LoadPlayerData()
@@ -112,8 +112,9 @@ public class PreloadPlayerData : MonoBehaviour
         if (iListInventarBO.Count > 0)
         {
             var index = iListInventarBO.FindIndex(i => i == iObject); // like Where/Single
+            // ensure item found
             if (index >= 0)
-            {   // ensure item found
+            {   
                 iListInventarBO.RemoveAt(index);
             }
         }

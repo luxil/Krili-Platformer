@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BonusShopButton : MonoBehaviour {
+
     PreloadPlayerData ppdata;
     public BonusObject [] goArrBonusObjects;
     public int iCurrentBO;
@@ -35,10 +36,6 @@ public class BonusShopButton : MonoBehaviour {
             ppdata.ICoinCount -= goArrBonusObjects[iCurrentBO].iCost;
             ppdata.iListInventarBO.Add(iCurrentBO);
             ppdata.SavePlayerData();
-            
-            Debug.Log(goArrBonusObjects[iCurrentBO].sBonusName + " buyed");
-            Debug.Log(ppdata.ICoinCount + " coins left");
-
             MainMenuGOs.Instance.tCointCounter.text = ppdata.ICoinCount.ToString();
         }
         else

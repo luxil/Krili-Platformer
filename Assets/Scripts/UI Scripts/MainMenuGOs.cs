@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MainMenuGOs : MonoBehaviour {
 
     private static MainMenuGOs instance;
+    public GameObject goEventSystem;
     public Text tCointCounter;
 
     void Start()

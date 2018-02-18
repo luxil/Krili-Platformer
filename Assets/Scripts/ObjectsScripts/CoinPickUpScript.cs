@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class CoinPickUpScript : MonoBehaviour {
 
-    //get GameObject InGameControl in Canvas
     private GameObject goPlayerControls;
-    CoinControlScript ccsScript;
 
     // Use this for initialization
     void Start()
     {
         goPlayerControls = CommonGameobjects.Instance.goPlayerControls;
-        ccsScript = goPlayerControls.GetComponent<CoinControlScript>();
     }
 
     //if player collides with coin then pick it up
@@ -20,7 +17,7 @@ public class CoinPickUpScript : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            ccsScript.addCoins(1);
+            goPlayerControls.GetComponent<CoinControlScript>().AddCoins(1);
             Destroy(gameObject);
         }
     }

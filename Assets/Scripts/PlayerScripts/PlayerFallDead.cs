@@ -4,29 +4,41 @@ using UnityEngine;
 
 public class PlayerFallDead : MonoBehaviour {
 
-    bool falling= false; // tells when the player is falling 
-    private float lastY; // last grounded height 
-    private CharacterController character;
+    // tells when the player is falling 
+    bool falling = false;
+    // last grounded height 
+    private float lastY; 
+    private CharacterController ccCharacter;
 
 	// Use this for initialization
 	void Start () {
-        character = GetComponent<CharacterController>();
+        ccCharacter = GetComponent<CharacterController>();
         lastY = transform.position.y;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (character.isGrounded == false)
-        { // if character not grounded... 
-            Debug.Log("not grounded");
-            falling = true; // assume it's falling 
-        } else { // if character grounded... 
-            if (falling){ // but was falling last update... 
-                var hFall = lastY - transform.position.y;
+        // if character not grounded... 
+        if (ccCharacter.isGrounded == false)
+        {
+            // assume it's falling 
+            falling = true; 
+        // if character grounded... 
+        }
+        else { 
+            // but was falling on last update... 
+            if (falling){
                 // calculate the fall height... 
-                if (hFall > 8){ // then check the damage/death // player is dead 
-                    Debug.Log("PLAYER DEAD");
-                } } lastY = transform.position.y; // update lastY when character grounded 
+                var hFall = lastY - transform.position.y;
+                // then check the damage/death 
+                if (hFall > 8){
+                    // player is dead 
+                    CommonGameobjects.Instance.goMenuCanvas.SetActive(true);
+                    CommonGameobjects.Instance.goGameOverPanel.SetActive(true);
+                }
+            }
+            // update lastY when character grounded 
+            lastY = transform.position.y; 
         }
     }
 }

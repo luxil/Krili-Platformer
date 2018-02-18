@@ -32,13 +32,13 @@ public class PendulumScript : MonoBehaviour {
 
     }
 
-    // see BadCubeScript
+    // see SpikeScript
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            goPlayerControls.GetComponent<HealthControlScript>().reduceHearts(1);
-            goPlayer.GetComponent<PlayerHitScript>().playerGotHurt();
+            goPlayerControls.GetComponent<HealthControlScript>().ReduceHearts(1);
+            goPlayer.GetComponent<PlayerHitScript>().PlayerGotHurt();
         }
     }
 }

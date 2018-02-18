@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpikeScript : MonoBehaviour {
 
     //https://www.mpgh.net/forum/showthread.php?t=427244
-    //get GameObject InGameControl in Canvas
     private GameObject goPlayerControls;
     private GameObject goPlayer;
 
@@ -20,8 +19,8 @@ public class SpikeScript : MonoBehaviour {
         //player got hit 
         if (other.gameObject.tag == "Player")
         {
-            goPlayerControls.GetComponent<HealthControlScript>().reduceHearts(1);
-            goPlayer.GetComponent<PlayerHitScript>().playerGotHurt();
+            goPlayerControls.GetComponent<HealthControlScript>().ReduceHearts(1);
+            goPlayer.GetComponent<PlayerHitScript>().PlayerGotHurt();
         }
     }
 }

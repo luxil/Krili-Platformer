@@ -396,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65c689195e7d144fae748e5b9d85c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goEventSystem: {fileID: 2064277832}
   tCointCounter: {fileID: 1703442186}
 --- !u!4 &334555849
 Transform:
@@ -420,6 +421,7 @@ GameObject:
   - component: {fileID: 442269563}
   - component: {fileID: 442269565}
   - component: {fileID: 442269564}
+  - component: {fileID: 442269566}
   m_Layer: 5
   m_Name: Level Selection
   m_TagString: Untagged
@@ -484,6 +486,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 442269562}
+--- !u!114 &442269566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 442269562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14915337e28ab5e49aa9918dc046c38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &449644406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,7 +1557,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 776264540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 442269566}
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level02
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &776264540
@@ -1907,7 +1931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1033800817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,10 +2430,10 @@ RectTransform:
   m_Father: {fileID: 814960666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 320, y: -425.25}
+  m_SizeDelta: {x: 300, y: 270.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1315274733
 MonoBehaviour:
@@ -2547,10 +2571,10 @@ RectTransform:
   m_Father: {fileID: 814960666}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 660, y: -425.25}
+  m_SizeDelta: {x: 300, y: 270.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1359910710
 MonoBehaviour:
@@ -2869,7 +2893,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1454584526}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 442269566}
+        m_MethodName: LoadLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level03
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1454584526
@@ -4432,7 +4467,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2064277833}
+      - m_Target: {fileID: 442269566}
         m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:

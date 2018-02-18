@@ -219,7 +219,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4738122896492056, guid: 8cc5d660b9e880b418747f2d4d056288, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -8.7
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4738122896492056, guid: 8cc5d660b9e880b418747f2d4d056288, type: 2}
       propertyPath: m_LocalRotation.x
@@ -306,6 +306,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 455efa077a4e86a47b9fac769089d560, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &757008190 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1955069390320168, guid: f4cde72521c86dd45baf76d93d1b5327,
+    type: 2}
+  m_PrefabInternal: {fileID: 1704904628}
+--- !u!114 &757008192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 757008190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa00748a951ba0499c93baad82b0362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &781514509
 Prefab:
   m_ObjectHideFlags: 0
@@ -717,7 +733,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4656274657488522, guid: 8ec41498c11bae14b9653a11a4da6809, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: 188.64
       objectReference: {fileID: 0}
     - target: {fileID: 4656274657488522, guid: 8ec41498c11bae14b9653a11a4da6809, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1036,7 +1052,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 135877017302663210, guid: f4cde72521c86dd45baf76d93d1b5327,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114764382146663400, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1711013925 stripped
