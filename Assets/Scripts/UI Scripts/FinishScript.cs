@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/***
+ * This script is for handling the finish of the game
+ */
 using UnityEngine;
 
 public class FinishScript : MonoBehaviour {
@@ -17,6 +18,7 @@ public class FinishScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        //activate finish window
         goMenuCanvas.SetActive(true);
         goLevelCompletePanel.SetActive(true);
         goPlayer.GetComponent<PlayerMovement>().bMovePlayer = false;

@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/***
+ * This script is for handling the bonusobjects
+ * 
+ * 
+ */
+
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PreloadBonusObjectsScript : MonoBehaviour

@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/***
+ * This script is for handling the pause menu
+ */
+
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuFunction : MonoBehaviour {

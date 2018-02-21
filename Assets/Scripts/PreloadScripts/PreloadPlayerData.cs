@@ -1,11 +1,18 @@
-﻿using System.Collections.Generic;
+﻿/***
+ * This script is for save and load data of the player (like coins)
+ */
+
+
+using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 public class PreloadPlayerData : MonoBehaviour
 {
+    //instance variable
     private static PreloadPlayerData instance;
+    //number of coins the player have
     private int iCoinCount = 0;
     //save all current BonusObjects of the player in the iListInventarBO list
     public List<int> iListInventarBO = new List<int>();

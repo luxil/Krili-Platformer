@@ -1,5 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/***
+ * This script is for the functionality of a bonus shop button
+ */
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +11,7 @@ public class BonusShopButton : MonoBehaviour {
     public BonusObject [] goArrBonusObjects;
     public int iCurrentBO;
 
+    //these text variables should display the bonus object information
     public Text tName;
     public Text tCost;
     public Text tDescription;
@@ -21,6 +24,7 @@ public class BonusShopButton : MonoBehaviour {
         setButton();
     }
 
+    //put information of the bonusobject in the button
     void setButton()
     {
         tName.text = goArrBonusObjects[iCurrentBO].sBonusName;
@@ -30,8 +34,10 @@ public class BonusShopButton : MonoBehaviour {
 
     public void OnClick()
     {
+        //check whether the player has enough coins and space in the inventory
         if (ppdata.ICoinCount >= goArrBonusObjects[iCurrentBO].iCost && ppdata.iListInventarBO.Count < ppdata.IMaxBO)
         {
+            //buy bonusobject and add it to the inventory; reduce coins
             ppdata.ICoinCount -= goArrBonusObjects[iCurrentBO].iCost;
             ppdata.iListInventarBO.Add(iCurrentBO);
             ppdata.SavePlayerData();

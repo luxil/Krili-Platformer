@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/***
+ * This script is like CommonGameobjects.cs but for the main menu
+ */
 using UnityEngine;
 using UnityEngine.UI;
 

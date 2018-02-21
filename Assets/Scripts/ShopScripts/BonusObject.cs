@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/***
+ * This script contains all the information a bonusobject should have. In Assets/Bonusobjects you could create different bonusobjects
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

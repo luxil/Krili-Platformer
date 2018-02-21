@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/***
+ * This script is for handling the inventory of the player
+ */
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,13 +29,10 @@ public class InventoryScript : MonoBehaviour {
         LoadInventory();
     }
 
-    public void Start()
-    {
-        //ActiveShopAndButtons();
-    }
-
+    //load the inventory
     public void LoadInventory()
     {
+        //first delete all buttons 
         if (butArrbutton != null)
         {
             foreach (Button but in butArrbutton)
@@ -46,6 +45,8 @@ public class InventoryScript : MonoBehaviour {
         }
         ppdata.LoadPlayerData();
         iListInventarBO = ppdata.iListInventarBO;
+
+        //then create for each bonusobject a button with the information
         int iIndexButton = 0;
         foreach (int i in iListInventarBO)
         {
@@ -64,13 +65,16 @@ public class InventoryScript : MonoBehaviour {
 
     void OnClickedButton(int index)
     {
+        //check whether the button is already selected and that not too many buttons are selected at the same time
         if (!butArrbutton[index].GetComponent<InvBOButton>().bSelected && PreloadBonusObjectsScript.Instance.IMaxCurrentBonusObjects> iCountSelectedBo)
         {
+            //select button for the level
             colOldColor = butArrbutton[index].GetComponent<Image>().color;
             butArrbutton[index].GetComponent<Image>().color = Color.green;
             butArrbutton[index].GetComponent<InvBOButton>().bSelected = true;
             iCountSelectedBo++;
         }
+        // unselect the button when it is already selected
         else if (butArrbutton[index].GetComponent<InvBOButton>().bSelected)
         {
             butArrbutton[index].GetComponent<Image>().color = colOldColor;
@@ -79,6 +83,7 @@ public class InventoryScript : MonoBehaviour {
         }
     }
 
+    //when you leave the inventory then save all selected bonusobjects for the level
     public void SetCurrentBoForLevel()
     {
         int iSelectButton = -1;
@@ -99,6 +104,9 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
+    //when you open the inventory in the shop you should not can select bonusobjects in the inventory
+    //bActivateAllButtons = false ---> inventory from shop
+    //bActivateAllButtons = true ---> inventory from level selection
     public void SetBoolActivateAllButtons(bool bActivateAllButtons)
     {
         LoadInventory();

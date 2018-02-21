@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/***
+ * This script is for handling the main menu
+ */
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
