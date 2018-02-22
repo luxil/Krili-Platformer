@@ -260,7 +260,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 1000, y: 400}
+  m_SizeDelta: {x: 1100, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232336114
 MonoBehaviour:
@@ -283,7 +283,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 707f7b20fdf50184295826a754b01e6f, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -294,7 +294,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Font: \n3D Meshes:"
+  m_Text: "Font:\t\t\t\tRegencie by \xC1lvaro Thom\xE1z \nHeart:\t\t\tSimple Gems
+    Ultimate Animated Customizable\n\t\t\t\t\tPack by AurynSky\nObstacle1:\t\tSpike
+    Ball from the Ball Pack by YounGenTech\nObstacle2:\tCell Figure free 3D model
+    by kastaniga"
 --- !u!222 &232336115
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1786,7 +1789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &856858915
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1857,7 +1860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &901347126
 RectTransform:
   m_ObjectHideFlags: 0
