@@ -15,5 +15,5 @@ MonoBehaviour:
   iCost: 5
   iID: 2
   fDuration: 5
-  sDescription: Player could get one hit without losing a heart
+  sDescription: Enabled you to get one hit without losing a heart.
   sprite: {fileID: 0}
