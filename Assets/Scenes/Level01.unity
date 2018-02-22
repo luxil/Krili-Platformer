@@ -1635,50 +1635,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 33176306895197310, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 9912625873f1b5148be537ec756a1303, type: 3}
-    - target: {fileID: 4115701735151778, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115701735151778, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 33571270370277210, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 9912625873f1b5148be537ec756a1303, type: 3}
-    - target: {fileID: 135637418771922128, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.0270691
-      objectReference: {fileID: 0}
-    - target: {fileID: 135764510221076654, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.01828
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115701735151778, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4115701735151778, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 5.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412668770189396, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412668770189396, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
   m_IsPrefabParent: 0
@@ -2134,28 +2090,6 @@ Prefab:
     - target: {fileID: 4411917892096630, guid: 455efa077a4e86a47b9fac769089d560, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114490457651345654, guid: 455efa077a4e86a47b9fac769089d560,
-        type: 2}
-      propertyPath: goInGameControl
-      value: 
-      objectReference: {fileID: 97259814}
-    - target: {fileID: 114490457651345654, guid: 455efa077a4e86a47b9fac769089d560,
-        type: 2}
-      propertyPath: goPlayer
-      value: 
-      objectReference: {fileID: 1023430927}
-    - target: {fileID: 4411917892096630, guid: 455efa077a4e86a47b9fac769089d560, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 16.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4411917892096630, guid: 455efa077a4e86a47b9fac769089d560, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4411917892096630, guid: 455efa077a4e86a47b9fac769089d560, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 455efa077a4e86a47b9fac769089d560, type: 2}
