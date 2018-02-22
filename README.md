@@ -16,26 +16,23 @@ https://docs.google.com/document/d/10ahgGXVQFrnen4LyOznG-NM9aCddc4p9m-959KqBBz0/
 https://trello.com/b/SseVw8RO/krilin
 
 
-###### Liste für mögliche Assets:
+###### used assets
+1. Heart
+	Simple Gems Ultimate Animated Customizable Pack by AurynSky 
+	(https://assetstore.unity.com/packages/3d/characters/simple-gems-ultimate-animated-customizable-pack-73764)
 
-https://www.assetstore.unity3d.com/en/#!/content/85262
-https://www.assetstore.unity3d.com/en/#!/content/99479
-https://www.assetstore.unity3d.com/en/#!/content/85838
-https://emerald-eel-entertainment.itch.io/low-poly-foliage-pack-001
-https://devilsgarage.itch.io/low-poly-pixel-rpg-asstes-procjam
-https://taikastudios.itch.io/low-poly-ground
-https://juicyvitamin.itch.io/royal-adventure-kit
-https://vertexcat.itch.io/vertex-color-trees-set
-https://droner503.itch.io/human-
-https://www.assetstore.unity3d.com/en/#!/content/24471
-https://www.assetstore.unity3d.com/en/#!/content/74333
+2.Obstacle 1 ("Virus")
+	Spike Ball from the Ball Pack by YounGen Tech
+	https://assetstore.unity.com/packages/3d/props/ball-pack-446
 
-
-https://www.assetstore.unity3d.com/en/#!/content/58821
-https://www.assetstore.unity3d.com/en/#!/content/63714
-https://www.assetstore.unity3d.com/en/#!/content/66638
-https://www.assetstore.unity3d.com/en/#!/content/84992
+3. Obstacle 2 ("Fireball")
+	Cell Figure free 3D model by kastaniga
+	https://www.cgtrader.com/free-3d-models/science/other/cell-figure
+	
+4. Font
+	Regencie by Álvaro Thomáz 
+	(for license please see font folder)
 
 
-https://www.cgtrader.com/free-3d-models/character/fantasy/low-polu
-https://www.cgtrader.com/free-3d-models/character/other/character--6#tab-comments
+
+
