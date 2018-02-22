@@ -204,6 +204,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bd52e09ecb49434eab4c3b542c4f495, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &118218457 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1728572067009344, guid: e214be84d59e456458eed7009c30fc7d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1096552444}
 --- !u!1 &130188557 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1463547745384892, guid: e214be84d59e456458eed7009c30fc7d,
@@ -1011,6 +1016,10 @@ Prefab:
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1469762002111264, guid: e214be84d59e456458eed7009c30fc7d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e214be84d59e456458eed7009c30fc7d, type: 2}
   m_IsPrefabParent: 0
@@ -1710,7 +1719,7 @@ Prefab:
         type: 2}
       propertyPath: goGameOverPanel
       value: 
-      objectReference: {fileID: 821328707}
+      objectReference: {fileID: 118218457}
     - target: {fileID: 114553769346150826, guid: aebbb7de49c822e4491571b4f008338f,
         type: 2}
       propertyPath: goPlayerControls
