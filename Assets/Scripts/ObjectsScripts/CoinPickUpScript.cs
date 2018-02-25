@@ -21,4 +21,13 @@ public class CoinPickUpScript : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            goPlayerControls.GetComponent<CoinControlScript>().AddCoins(1);
+            Destroy(gameObject);
+        }
+    }
 }

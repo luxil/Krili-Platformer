@@ -38,7 +38,8 @@ public class PlayerMovement : MonoBehaviour {
         //move the player along the x-Axis
         if (bMovePlayer)
         {
-            transform.Translate(fRunningSpeed, 0, 0);
+            float fTranslation = Time.deltaTime * fRunningSpeed * 100;
+            transform.Translate(fTranslation, 0, 0);
         }
         
         ///pc controls

@@ -389,6 +389,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1107458800994980, guid: 8cc5d660b9e880b418747f2d4d056288, type: 2}
+      propertyPath: m_Name
+      value: HeartPickUp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cc5d660b9e880b418747f2d4d056288, type: 2}
   m_IsPrefabParent: 0
@@ -505,22 +509,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &757008190 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1955069390320168, guid: f4cde72521c86dd45baf76d93d1b5327,
-    type: 2}
-  m_PrefabInternal: {fileID: 1704904628}
---- !u!114 &757008192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 757008190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efa00748a951ba0499c93baad82b0362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &781514509
 Prefab:
   m_ObjectHideFlags: 0
@@ -748,7 +736,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4029710503297934, guid: aa9f2b948e2c63643ac9a7bdc6eb7432, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12.7
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 4029710503297934, guid: aa9f2b948e2c63643ac9a7bdc6eb7432, type: 2}
       propertyPath: m_LocalPosition.z
@@ -773,10 +761,6 @@ Prefab:
     - target: {fileID: 4029710503297934, guid: aa9f2b948e2c63643ac9a7bdc6eb7432, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4029710503297934, guid: aa9f2b948e2c63643ac9a7bdc6eb7432, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 411.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa9f2b948e2c63643ac9a7bdc6eb7432, type: 2}
@@ -1010,14 +994,6 @@ Prefab:
     - target: {fileID: 224000222650692990, guid: e214be84d59e456458eed7009c30fc7d,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463547745384892, guid: e214be84d59e456458eed7009c30fc7d, type: 2}
-      propertyPath: m_Name
-      value: MenuCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469762002111264, guid: e214be84d59e456458eed7009c30fc7d, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1372,13 +1348,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 135877017302663210, guid: f4cde72521c86dd45baf76d93d1b5327,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114764382146663400, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1708967421 stripped

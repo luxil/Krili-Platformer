@@ -21,4 +21,13 @@ public class HeartPickUpScript : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            goPlayerControls.GetComponent<HealthControlScript>().AddHearts(1);
+            Destroy(gameObject);
+        }
+    }
 }
