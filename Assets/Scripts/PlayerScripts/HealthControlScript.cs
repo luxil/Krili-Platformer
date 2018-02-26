@@ -14,7 +14,7 @@ public class HealthControlScript : MonoBehaviour
 	private GameObject goMenuCanvas;
     private GameObject goPlayer;
 
-    // Use this for initialization
+
     void Start()
     {
         iHealth = 2;

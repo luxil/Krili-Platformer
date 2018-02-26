@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class PlayerFallDead : MonoBehaviour {
 
-    // tells when the player is falling 
-    bool falling = false;
-    // last grounded height 
-    private float lastY; 
+    bool falling = false;   // indicates whether the player is falling or not
+    private float lastY;    // last grounded height 
     private CharacterController ccCharacter;
 
-	// Use this for initialization
+
 	void Start () {
         ccCharacter = GetComponent<CharacterController>();
         lastY = transform.position.y;
     }
 	
-	// Update is called once per frame
+
 	void Update () {
+       
         // if character not grounded... 
         if (ccCharacter.isGrounded == false)
         {
             // assume it's falling 
             falling = true; 
-        // if character grounded... 
         }
-        else { 
+        // if character grounded... 
+        else
+        { 
             // but was falling on last update... 
             if (falling){
                 // calculate the fall height... 

@@ -4,28 +4,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    //move the player or not
-    public bool bMovePlayer, bGrounded;
-    //running speed of the player
-    public float fRunningSpeed;
-    public Transform TGroundCheck;
-    public float fJumpForce = 1000f;
-    const float cfRunningSpeed = 8.5f;
+    public bool bMovePlayer, bGrounded; // move the player or not
+    public Transform TGroundCheck;  // to check if the player is touching the ground
+    public float fJumpForce = 1000f;    
+    const float cfRunningSpeed = 8.5f;  // running speed of the player
 
-    // tells when the player is falling 
-    public bool bFalling = false;
-    // last grounded height 
-    private float fLastY; 
+    public bool bFalling = false;   // indicates if the player is falling or not   
+    private float fLastY;   // last grounded height
     //private CharacterController ccCharacter;
 
     private Rigidbody rbPlayer;
 
-    // Use this for initialization
+
     void Start () {
         bMovePlayer = true;
         bGrounded = true;
-
-        //fRunningSpeed = cfRunningSpeed;
 
         //ccCharacter = GetComponent<CharacterController>();
         fLastY = transform.position.y;
@@ -33,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
         rbPlayer = GetComponent<Rigidbody>();
     }
 	
-	// Update is called once per frame
+
 	void FixedUpdate () {
 
         //move the player along the x-Axis
@@ -42,8 +35,10 @@ public class PlayerMovement : MonoBehaviour {
             float fTranslation = Time.fixedDeltaTime * cfRunningSpeed;
             transform.Translate(fTranslation, 0, 0);
         }
-        
-        ///pc controls
+
+        /**********************************************
+        *   PC Controls (mostly for testing purpose)
+        **********************************************/
         if (Input.GetKeyDown("left"))
         {
             ToggleMovement();
@@ -64,18 +59,23 @@ public class PlayerMovement : MonoBehaviour {
             Jump();
         }
 
-        ///for testing purposes
-        ////player can run faster
-        //if (Input.GetKeyDown("right"))
-        //{
-        //    fRunningSpeed = 0.9f;
-        //}
+        /// <summary>
+        /// The following code bit was done only for testing purposes and is therefore a comment.
+        /// It is still part of the code as we frequently reuse it to test some level designs. 
+        /// </summary>
 
-        ////slow player down
-        //if (Input.GetKeyUp("right"))
-        //{
-        //    fRunningSpeed = cfRunningSpeed;
-        //}
+/*      //player can run faster
+        if (Input.GetKeyDown("right"))
+        {
+           fRunningSpeed = 0.9f;
+        }
+
+        //slow player down
+        if (Input.GetKeyUp("right"))
+        {
+            fRunningSpeed = cfRunningSpeed;
+        }
+*/
 
         // if character not grounded...
         if (!bGrounded)
@@ -107,6 +107,7 @@ public class PlayerMovement : MonoBehaviour {
         
     }
 
+    // if the player jumps (and therefore doesn't collide with the floor anymore), change bGrounded accordingly
     private void OnCollisionExit(Collision collision)
     {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
@@ -115,6 +116,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    // if the player is collding with the floor, set bGrounded accordingly
     private void OnCollisionStay(Collision collision)
     {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
@@ -150,7 +152,7 @@ public class PlayerMovement : MonoBehaviour {
         transform.position += new Vector3(0, 0.6f, 0);
     }
 
-    //player should stop or run
+    //player should stop/run
     public void ToggleMovement()
     {
         bMovePlayer = !bMovePlayer;

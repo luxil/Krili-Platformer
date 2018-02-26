@@ -4,10 +4,8 @@ public class CoinControlScript : MonoBehaviour {
 
     private int iCoinCounter;
     public GameObject goCoinCounterText;
-    //for example needed for DoubleCoin
-    public int iCoinCounterFactor = 1;
+    public int iCoinCounterFactor = 1;  //for example needed for DoubleCoin
 
-    // Use this for initialization
     void Start()
     {
         iCoinCounter = PreloadPlayerData.Instance.ICoinCount;
