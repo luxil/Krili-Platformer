@@ -1,6 +1,7 @@
-﻿/***
- * This script is for handling the main menu
- */
+﻿/**********************************************
+*   script to handle the main menu
+**********************************************/
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,7 +36,7 @@ public class MainMenuFunction : MonoBehaviour {
 
     public void EndGame()
     {
-        
+        // included unity_editor for testing purposes
         #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
         #else
@@ -47,6 +48,13 @@ public class MainMenuFunction : MonoBehaviour {
     /****************************************************
      * Turn Level Selection on/off
      ****************************************************/
+
+    /// <summary>
+    ///  This function is supplied with a String that can be set in the inspector in Unity.
+    ///  This is done so that the same function can be used by different objects,
+    ///  but each loading different scenes. 
+    /// </summary>
+
     public void LoadLevel(string selectedLevel)
     {
         // String has to be the Name of the scene!

@@ -1,6 +1,8 @@
-﻿/***
- * This script is like CommonGameobjects.cs but for the main menu
- */
+﻿
+/**********************************************
+*   This script is like CommonGameobjects.cs but for the main menu
+**********************************************/
+
 using UnityEngine;
 using UnityEngine.UI;
 

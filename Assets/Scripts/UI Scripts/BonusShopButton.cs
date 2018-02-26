@@ -1,6 +1,7 @@
-﻿/***
- * This script is for the functionality of a bonus shop button
- */
+﻿
+/**********************************************
+*   script to handle the functionality of the bonus shop button
+**********************************************/
 
 using UnityEngine;
 using UnityEngine.UI;

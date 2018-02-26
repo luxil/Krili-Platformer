@@ -1,6 +1,8 @@
-﻿/***
- * This script is for handling the inventory of the player
- */
+﻿
+/**********************************************
+*   script to handle the inventory
+**********************************************/
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +21,7 @@ public class InventoryScript : MonoBehaviour {
     private bool bActivateAllButtons = false;
     Color colOldColor;
 
-    // Use this for initialization
+
     private void Awake()
     {
         ppdata = PreloadPlayerData.Instance;
@@ -46,7 +48,7 @@ public class InventoryScript : MonoBehaviour {
         ppdata.LoadPlayerData();
         iListInventarBO = ppdata.iListInventarBO;
 
-        //then create for each bonusobject a button with the information
+        //then create a button with the information for each bonus object
         int iIndexButton = 0;
         foreach (int i in iListInventarBO)
         {
@@ -83,7 +85,7 @@ public class InventoryScript : MonoBehaviour {
         }
     }
 
-    //when you leave the inventory then save all selected bonusobjects for the level
+    //when you leave the inventory save all selected bonusobjects for the level
     public void SetCurrentBoForLevel()
     {
         int iSelectButton = -1;
@@ -104,7 +106,7 @@ public class InventoryScript : MonoBehaviour {
 
     }
 
-    //when you open the inventory in the shop you should not can select bonusobjects in the inventory
+    //when you open the inventory in the shop you should not be able to select bonusobjects in the inventory
     //bActivateAllButtons = false ---> inventory from shop
     //bActivateAllButtons = true ---> inventory from level selection
     public void SetBoolActivateAllButtons(bool bActivateAllButtons)

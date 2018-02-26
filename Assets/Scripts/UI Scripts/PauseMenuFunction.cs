@@ -1,6 +1,8 @@
-﻿/***
- * This script is for handling the pause menu
- */
+﻿
+/**********************************************
+*   script to handle the pause menu
+*   (which also includes the game over panel and the next level panel)
+**********************************************/
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,7 +14,7 @@ public class PauseMenuFunction : MonoBehaviour {
     private GameObject goGameOver;
 	private GameObject goPausePanel;
 
-    private bool bStateChange;
+    private bool bStateChange;  // indicates if the player had to be stopped while displaying the pause menu
     private int iCurrentScene;
 
     void Start ()
@@ -21,6 +23,7 @@ public class PauseMenuFunction : MonoBehaviour {
         goMenuCanvas = CommonGameobjects.Instance.goMenuCanvas;
 		goPausePanel = CommonGameobjects.Instance.goPausePanel;
         goGameOver = CommonGameobjects.Instance.goGameOverPanel;
+
         // disable Canvas at the start of the scene
         goMenuCanvas.SetActive(false);
         goGameOver.SetActive(false);
@@ -46,7 +49,7 @@ public class PauseMenuFunction : MonoBehaviour {
         goMenuCanvas.SetActive(true);
 		goPausePanel.SetActive(true);
 
-        // stop Player if he's currently moving
+        // stop Player if he's currently moving and change bStateChange accordingly
         if (goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer == true)
         {
             goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer = false;
@@ -61,15 +64,15 @@ public class PauseMenuFunction : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
-
     public void Continue()
     {
         Time.timeScale = 1.0f; //unpaused
+        // deactivate any canvases
         goMenuCanvas.SetActive(false);
         goGameOver.SetActive(false);
 		goPausePanel.SetActive(false);
 
-        // if player was stopped reactivate movement
+        // if player was stopped reactivate movement and change status of bStateChange
         if (bStateChange == true)
         {
             goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer = true;
@@ -94,6 +97,12 @@ public class PauseMenuFunction : MonoBehaviour {
         // reload current scene
         SceneManager.LoadScene(iCurrentScene, LoadSceneMode.Single);
     }
+
+    /// <summary>
+    ///  This function is supplied with a String that can be set in the inspector in Unity.
+    ///  This is done so that the same function can be used by different objects,
+    ///  but each loading different scenes. 
+    /// </summary>
 
     public void NextLevel(string nextLevel)
     {
