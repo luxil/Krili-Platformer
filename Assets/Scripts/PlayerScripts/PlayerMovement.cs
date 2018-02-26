@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     public float fRunningSpeed;
     public Transform TGroundCheck;
     public float fJumpForce = 1000f;
-    const float cfRunningSpeed = 10.5f;
+    const float cfRunningSpeed = 8.5f;
 
     // tells when the player is falling 
     public bool bFalling = false;
@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour {
         bMovePlayer = true;
         bGrounded = true;
 
+        //fRunningSpeed = cfRunningSpeed;
+
         //ccCharacter = GetComponent<CharacterController>();
         fLastY = transform.position.y;
 
@@ -32,12 +34,12 @@ public class PlayerMovement : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         //move the player along the x-Axis
         if (bMovePlayer)
         {
-            float fTranslation = Time.deltaTime * cfRunningSpeed;
+            float fTranslation = Time.fixedDeltaTime * cfRunningSpeed;
             transform.Translate(fTranslation, 0, 0);
         }
         
