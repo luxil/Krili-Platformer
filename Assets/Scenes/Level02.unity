@@ -253,6 +253,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4115701735151778, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
   m_IsPrefabParent: 0
@@ -294,6 +298,10 @@ Prefab:
     - target: {fileID: 4520204365998118, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598566888665196, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.217
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
@@ -505,6 +513,10 @@ Prefab:
     - target: {fileID: 1763883550519096, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
       propertyPath: m_Name
       value: FireballLowContainer2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598566888665196, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.217
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
@@ -1070,6 +1082,10 @@ Prefab:
       propertyPath: m_Name
       value: FireballHighContainer2
       objectReference: {fileID: 0}
+    - target: {fileID: 4115701735151778, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1bb0918f6fc55774d8b7f0d86b8daaa6, type: 2}
   m_IsPrefabParent: 0
@@ -1360,6 +1376,10 @@ Prefab:
     - target: {fileID: 4520204365998118, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598566888665196, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.217
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4cde72521c86dd45baf76d93d1b5327, type: 2}
