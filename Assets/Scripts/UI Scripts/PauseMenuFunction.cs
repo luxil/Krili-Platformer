@@ -81,6 +81,7 @@ public class PauseMenuFunction : MonoBehaviour {
     public void GameOver()
     {
         Time.timeScale = 0.0f; //paused
+        goPlayerObject.GetComponent<PlayerMovement>().bMovePlayer = false; //stop player movement
         goMenuCanvas.SetActive(true);
         goGameOver.SetActive(true);
     }

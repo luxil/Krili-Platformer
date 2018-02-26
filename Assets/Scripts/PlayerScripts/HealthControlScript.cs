@@ -12,6 +12,7 @@ public class HealthControlScript : MonoBehaviour
 	
 	private GameObject goGameOverPanel;
 	private GameObject goMenuCanvas;
+    private GameObject goPlayer;
 
     // Use this for initialization
     void Start()
@@ -20,6 +21,7 @@ public class HealthControlScript : MonoBehaviour
         SetActiveHearts();
 		goGameOverPanel = CommonGameobjects.Instance.goGameOverPanel;
 		goMenuCanvas = CommonGameobjects.Instance.goMenuCanvas;
+        goPlayer = CommonGameobjects.Instance.goPlayer;
     }
 
     //add hearts
@@ -59,6 +61,7 @@ public class HealthControlScript : MonoBehaviour
             //player is dead
 			goMenuCanvas.SetActive(true);
 			goGameOverPanel.SetActive(true);
+            goPlayer.GetComponent<PlayerMovement>().bMovePlayer = false; //stop player movement
         }
     }
 
