@@ -1,16 +1,20 @@
-﻿using System.Collections;
+﻿/**********************************************
+*   script to handle moving platforms 
+**********************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatformScript : MonoBehaviour {
 
-    // platform speed (public so it's easily changeable in the editor)
-    public float speed = 3;
-    // platform direction (1 = forward, -1 = backwards)
-    private int direction = 1;
+    public float speed = 3; // platform speed (public so it's easily changeable in the editor)
+    private int direction = 1;  // platform direction (1 = forward, -1 = backwards)
+
 
     void Update()
     {
+        // platform movement
         transform.Translate(transform.right * speed * direction * Time.deltaTime);
     }
 

@@ -1,15 +1,16 @@
-﻿using System.Collections;
+﻿/**********************************************
+*   script to handle moving platforms that only move when the player is on them
+**********************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatformOnColScript : MonoBehaviour {
 
-    // platform speed (public so it's easily changeable in the editor)
-    public float speed = 1;
-    // platform direction (1 = forward, -1 = backwards)
-    private int direction = 1;
-    // check to see if player is currently on the platform
-    private bool bPlayerOnPlatform = false;
+    public float speed = 1; // platform speed (public so it's easily changeable in the editor)
+    private int direction = 1;  // platform direction (1 = forward, -1 = backwards)
+    private bool bPlayerOnPlatform = false; // check to see if player is currently on the platform
 
     void Update()
     {
