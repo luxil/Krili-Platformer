@@ -1,8 +1,7 @@
-﻿/***
- * This script is for handling the bonusobjects
- * 
- * 
- */
+﻿
+/**********************************************
+*   script to handle bonus objects
+**********************************************/
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +13,7 @@ public class PreloadBonusObjectsScript : MonoBehaviour
     private int iCurrentBonusObject = -1;
     private int iCurrentBonusObject2 = -1;
     private int iMaxCurrentBonusObjects = 2;
+
 
     void Awake () {
         //*set instance

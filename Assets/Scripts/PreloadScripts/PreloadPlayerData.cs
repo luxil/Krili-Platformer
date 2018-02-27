@@ -1,6 +1,7 @@
-﻿/***
- * This script is for save and load data of the player (like coins)
- */
+﻿
+/**********************************************
+*   script to handle saving and loading of player data (for example coins)
+**********************************************/
 
 
 using System.Collections.Generic;
@@ -10,15 +11,11 @@ using System.IO;
 
 public class PreloadPlayerData : MonoBehaviour
 {
-    //instance variable
-    private static PreloadPlayerData instance;
-    //number of coins the player have
-    private int iCoinCount = 0;
-    //save all current BonusObjects of the player in the iListInventarBO list
-    public List<int> iListInventarBO = new List<int>();
-    //max BonusObjects a player can have
-    private int iMaxBO = 6;
-    //
+    private static PreloadPlayerData instance;  //instance variable
+    private int iCoinCount = 0; //number of coins the player has
+    public List<int> iListInventarBO = new List<int>(); //save all current BonusObjects of the player in the iListInventarBO list
+    private int iMaxBO = 6; //max BonusObjects a player can have
+
 
     void Awake()
     {
