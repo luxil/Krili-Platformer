@@ -1,10 +1,11 @@
-﻿/***
- * Ín this script are all important GameObjects, which you could call in other scripts with CommonGameobjects.Instance.[name of the gameobject].
- * So you don't have to drag and drop the objects in the editor for other scripts.
- * The reason why you should not use drag and drop: If you use git with other contributors they have to drag and drop the objects in ALL gameobjects, too.
- * Which could be painful if you have many different gameobjects.
- * With this method they only have to drag and drop the objects in this CommonGameobjects script
- */
+﻿/// <summary>
+/// This scripts includes all the GameObjects which are called in other scripts with CommonGameobjects.Instance.[name of the gameobject].
+/// This is done so the objects don't have to be dragged and dropped in the unity editor for the other scripts.
+/// The reason why drag and drop shouldn't be used: If you use git with other contributors they have to drag and drop EACH gameobject into the script, too.
+/// This is quite time consuming and annoying, especially if the project has many different gameobjects used by different scripts.
+/// With this method the objects have to be draged and dropped only once into this CommonGameobjects script.
+/// </summary>
+
 
 using UnityEngine;
 

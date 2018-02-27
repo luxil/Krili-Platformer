@@ -1,6 +1,8 @@
-﻿/***
- * This script contains all the information a bonusobject should have. In Assets/Bonusobjects you could create different bonusobjects
- */
+﻿
+/**********************************************
+*   This script contains all the information a bonusobject should have. 
+*   Bonusobjects are stored in the Assets/Bonusobjects.
+**********************************************/
 
 using System.Collections;
 using System.Collections.Generic;
