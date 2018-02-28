@@ -17,21 +17,20 @@ https://trello.com/b/SseVw8RO/krilin
 
 
 ###### used assets
-1. Heart
-	Simple Gems Ultimate Animated Customizable Pack by AurynSky 
-	(https://assetstore.unity.com/packages/3d/characters/simple-gems-ultimate-animated-customizable-pack-73764)
+1. Heart: 
+Simple Gems Ultimate Animated Customizable Pack by AurynSky 
+(https://assetstore.unity.com/packages/3d/characters/simple-gems-ultimate-animated-customizable-pack-73764)
 
-2.Obstacle 1 ("Virus")
-	Spike Ball from the Ball Pack by YounGen Tech
-	https://assetstore.unity.com/packages/3d/props/ball-pack-446
+2.Obstacle 1 ("Virus"): 
+Spike Ball from the Ball Pack by YounGen Tech
+https://assetstore.unity.com/packages/3d/props/ball-pack-446
 
-3. Obstacle 2 ("Fireball")
-	Cell Figure free 3D model by kastaniga
-	https://www.cgtrader.com/free-3d-models/science/other/cell-figure
+3. Obstacle 2 ("Fireball"): 
+Cell Figure free 3D model by kastaniga
+https://www.cgtrader.com/free-3d-models/science/other/cell-figure
 	
-4. Font
-	Regencie by Álvaro Thomáz 
-	(for license please see font folder)
+4. Font: 
+Regencie by Álvaro Thomáz (for license please see font folder)
 
 
 
