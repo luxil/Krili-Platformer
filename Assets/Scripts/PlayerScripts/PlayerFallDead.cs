@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿
+/**********************************************
+*   This script handles the player's death through falling 
+**********************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿
+/**********************************************
+*   This script handles the coins
+**********************************************/
+
+using UnityEngine;
 
 public class CoinControlScript : MonoBehaviour {
 

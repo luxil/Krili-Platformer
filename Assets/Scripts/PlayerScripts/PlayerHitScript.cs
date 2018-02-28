@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿
+/**********************************************
+*   This script handles the texture change when the player hits an obstacle
+**********************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
