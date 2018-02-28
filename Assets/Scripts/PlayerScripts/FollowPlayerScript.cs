@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿
+/**********************************************
+*   This script is for handling the camera movement with the player. The camera should not move up and down with the player.
+**********************************************/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

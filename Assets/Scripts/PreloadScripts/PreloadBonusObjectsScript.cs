@@ -27,8 +27,6 @@ public class PreloadBonusObjectsScript : MonoBehaviour
         instance = this;
         //*end set instance
 
-        //load main menu
-        SceneManager.LoadScene(1);
     }
 
     public static PreloadBonusObjectsScript Instance

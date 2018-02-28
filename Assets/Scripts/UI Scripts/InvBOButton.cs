@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿
+/**********************************************
+*   script to handle the diffent button values
+**********************************************/
+
+using UnityEngine;
 using UnityEngine.UI;
 
 public class InvBOButton : MonoBehaviour {

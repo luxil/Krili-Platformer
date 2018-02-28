@@ -1,5 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+/**********************************************
+*   This script handles the level selection
+**********************************************/
+
 using UnityEngine;
 
 public class LevelSelection : MonoBehaviour

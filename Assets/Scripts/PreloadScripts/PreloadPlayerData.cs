@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class PreloadPlayerData : MonoBehaviour
 {
@@ -32,17 +33,20 @@ public class PreloadPlayerData : MonoBehaviour
 
         LoadPlayerData();
 
-        //tests
-        if (iListInventarBO.Count < 0)
-        {
-            iListInventarBO = new List<int>();
-            SavePlayerData();
+        //load main menu
+        SceneManager.LoadScene(1);
 
-            foreach (int test in iListInventarBO)
-            {
-                Debug.Log("List: " + test);
-            }
-        }
+        ////tests
+        //if (iListInventarBO.Count < 0)
+        //{
+        //    iListInventarBO = new List<int>();
+        //    SavePlayerData();
+
+        //    foreach (int test in iListInventarBO)
+        //    {
+        //        Debug.Log("List: " + test);
+        //    }
+        //}
     }
 
     public static PreloadPlayerData Instance

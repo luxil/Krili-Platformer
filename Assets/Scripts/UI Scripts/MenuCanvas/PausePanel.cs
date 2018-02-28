@@ -1,5 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+/**********************************************
+*   This script handles the pause panel
+**********************************************/
+
 using UnityEngine;
 
 public class PausePanel : MonoBehaviour {

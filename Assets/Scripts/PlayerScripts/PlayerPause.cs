@@ -1,5 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+/**********************************************
+*   This script handles the pause in an easy way
+**********************************************/
+
 using UnityEngine;
 
 public class PlayerPause : MonoBehaviour {
