@@ -22,11 +22,11 @@ public class BonusShopButton : MonoBehaviour {
         ppdata = PreloadPlayerData.Instance;
         MainMenuGOs.Instance.tCointCounter.text = ppdata.ICoinCount.ToString();
         goArrBonusObjects = PreloadBonusObjectsScript.Instance.boArrBonusObjects;
-        setButton();
+        SetButton();
     }
 
     //put information of the bonusobject in the button
-    void setButton()
+    void SetButton()
     {
         tName.text = goArrBonusObjects[iCurrentBO].sBonusName;
         tCost.text = goArrBonusObjects[iCurrentBO].iCost.ToString();
